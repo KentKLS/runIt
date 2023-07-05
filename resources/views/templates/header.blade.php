@@ -41,7 +41,7 @@
         </div>
         <nav>
             <div class="flex space-x-6 text-white font-bold mx-6 ">
-                <span><a href="#">| Home</a></span>
+                <span><a href="/">| Home</a></span>
                 <span><a href="#">| Contact</a></span>
                 <span><a href="#">| Catalogue</a></span>
                 <a href="#">
