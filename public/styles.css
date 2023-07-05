@@ -12,10 +12,24 @@
 h2{
     font-size: 40px;
     color: var(--color-primary);
+    font-weight: bold;
+}
+
+h3{
+    font-size: 30px;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+h4{
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1440px;
     margin:0 auto;
 }
 
@@ -41,6 +55,11 @@ main{
 }
 p.path{
     color: #ffffff;
+    padding-top: 40px;
+}
+
+.position_catalogue{
+    margin-top: 40px;
 }
 button{
     display: inline-block;
@@ -54,6 +73,10 @@ button{
     height:45px;
     margin-right: 10px;
 }
+.position_button{
+    display: flex;
+    align-items: center;
+}
 
 p.main{
     color: var(--color-primary) ;
@@ -62,10 +85,39 @@ p.main{
 
 .wrapper{
     display: grid;
-    grid
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px 15px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
 }
 
+.cart{
+    width: 454px;
+    height: 586px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.cart_img{
+    width: 400px;
+    height: 350px;
+}
+
+.cart_position{
+    margin-bottom: 30px;
+}
+
+.pagination{
+    color: var(--color-primary);
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
 
 
 
