@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 
-    <title>Run It</title>
+    <title>RunIt - @yield('title')</title>
 </head>
 
 <body>
-@include('templates.header')
-@yield('content')
-
+    @include('templates.header')
+    <div class=' container mx-auto'>
+        @yield('content')
+    </div>
 </body>
-
 </html>
