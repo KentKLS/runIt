@@ -2,7 +2,7 @@
 
 
 
-<header class="bg-[#FF7A00] w-full">
+<header class="bg-[#FF7A00]  ">
     <div class="  flex justify-between container items-center m-auto ">
         <div class=" my-3 ">
             <svg width="75" height="92" viewBox="0 0 75 92" fill="none" xmlns="http://www.w3.org/2000/svg">
