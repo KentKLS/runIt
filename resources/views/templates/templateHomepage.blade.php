@@ -11,9 +11,9 @@
 
 <body>
     @include('templates.header')
+    @include('hero')
+    @yield('content')
 
-    <div class=' container mx-auto'>
-        @yield('content')
-    </div>
 </body>
+
 </html>
