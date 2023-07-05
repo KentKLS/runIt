@@ -1,5 +1,9 @@
+
+
+
+
 <header class="bg-[#FF7A00] w-full">
-    <div class="  flex justify-between max-w-[1400px] items-center m-auto ">
+    <div class="  flex justify-between container items-center m-auto ">
         <div class=" my-3 ">
             <svg width="75" height="92" viewBox="0 0 75 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -36,7 +40,7 @@
 
         </div>
         <nav>
-            <div class="flex space-x-6 text-white font-bold ">
+            <div class="flex space-x-6 text-white font-bold mx-6 ">
                 <span><a href="#">| Home</a></span>
                 <span><a href="#">| Contact</a></span>
                 <span><a href="#">| Catalogue</a></span>
