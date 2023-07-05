@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{asset('styles.css')}}" type="text/css">
     <link href="https://fonts.googleapis.com/css2? display=swap » rel=" stylesheet>
-    <title>Run It</title>
+    <title>Run It @yield('title')</title>
 </head>
 
 <body>
