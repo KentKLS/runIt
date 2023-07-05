@@ -38,6 +38,7 @@ h2{
     flex-direction: column;
 }
 
+
 /*CSS productlist*/
 
 main{
@@ -56,13 +57,40 @@ p.main{
 
 .wrapper{
     display: grid;
-    grid
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px 15px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
 }
 
-
-.outlineShadow{
-    box-shadow: 0 1px 0 #000;
+.cart{
+    width: 454px;
+    height: 586px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
+.cart_img{
+    width: 400px;
+    height: 350px;
+}
+
+.cart_position{
+    margin-bottom: 30px;
+}
+
+.pagination{
+    color: var(--color-primary);
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
 
 
 

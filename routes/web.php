@@ -21,3 +21,7 @@ Route::get('/cart', [CartController::class, 'show'])->name('showCart');
 Route::get('/catalogue/trail', function () {
     return view('products-list');
 });
+
+Route::get('/product-detail', function () {
+    return view('product-detail');
+});
