@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/catalogue/trail', function () {
     return view('products-list');
 });
+
+Route::get('/product-detail', function () {
+    return view('product-detail');
+});
