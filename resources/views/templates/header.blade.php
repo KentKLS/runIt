@@ -44,7 +44,7 @@
                 <span><a href="/">| Home</a></span>
                 <span><a href="#">| Contact</a></span>
                 <span><a href="#">| Catalogue</a></span>
-                <a href="#">
+                <a href="/cart">
                     <svg class=" fill-white" width="28" height="26" viewBox="0 0 28 26" fill="none"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="28" height="26" fill="url(#pattern0)" />
