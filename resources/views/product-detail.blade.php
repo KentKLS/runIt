@@ -16,10 +16,28 @@
                     <button class="button_change_page" type="submit">Ajouter au panier</button>
                 </div>
             </div>
-
+        </div>
+        <div class="features">
+            <h3 class="color_title">Caractéristique produit</h3>
+        </div>
+        <div class="features">
+            <h4 class="feature">
+                <p>LOREM IPSUM dolor sit amet, consectetur adipiscing elit</p>
+            </h4>
+            <h4 class="feature">
+                <p>LOREM IPSUM dolor sit amet, consectetur adipiscing elit</p>
+            </h4>
+            <h4 class="feature">
+                <p>LOREM IPSUM dolor sit amet, consectetur adipiscing elit</p>
+            </h4>
+            <h4 class="feature">
+                <p>LOREM IPSUM dolor sit amet, consectetur adipiscing elit</p>
+            </h4>
+            <h4 class="feature">
+                <p>LOREM IPSUM dolor sit amet, consectetur adipiscing elit</p>
+            </h4>
         </div>
     </div>
-
 </main>
 
 @endsection

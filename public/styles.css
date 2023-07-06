@@ -62,6 +62,7 @@ p.path{
 .position_catalogue{
     margin-top: 40px;
 }
+
 button{
     display: inline-block;
     background-color: #212121;
@@ -123,10 +124,11 @@ p.main{
 /*CSS détail produit*/
 .product_detail{
     background-color: #ffffff;
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 .title_product{
     background-color: var(--color-primary);
-    margin-top: 150px;
     margin-bottom: 50px;
 }
 
@@ -136,6 +138,7 @@ p.main{
 }
 .border{
     border: solid #000000;
+    border-width: 0.5px;
 }
 
 .column{
@@ -151,6 +154,11 @@ p.main{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-right:solid ;
+    border-right-color: #000000;
+    border-right-width: 0.5px;
 }
 .button_change_page{
     display: inline-block;
@@ -166,7 +174,10 @@ p.main{
 
 .description_product{
     padding: 40px ;
+    margin-top: 70px;
+    font-size: 20px;
 }
+
 
 .add_cart{
     display: flex;
@@ -175,6 +186,18 @@ p.main{
 }
 
 
+.features{
+    display: flex;
+    align-items:   center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-direction: column;
+}
+
+.feature{
+    margin-top: 10px;
+    font-weight: normal;
+}
 
 
 
