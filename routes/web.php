@@ -25,3 +25,7 @@ Route::get('/catalogue/trail', function () {
 Route::get('/product-detail', function () {
     return view('product-detail');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
