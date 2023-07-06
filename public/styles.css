@@ -14,6 +14,10 @@ h2{
     color: var(--color-primary);
 }
 
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .container{
     max-width: 1200px;
     margin:0 auto;
@@ -42,18 +46,8 @@ main{
 p.path{
     color: #ffffff;
 }
-button{
-    display: inline-block;
-    background-color: #212121;
-    border-radius: 12px;
-    border: solid var(--color-primary);
-    text-align: center;
-    font-size: var(--font-size);
-    padding: 5px;
-    width: 180px;
-    height:45px;
-    margin-right: 10px;
-}
+
+
 
 p.main{
     color: var(--color-primary) ;
@@ -66,7 +60,9 @@ p.main{
 }
 
 
-
+.outlineShadow{
+    box-shadow: 0 1px 0 #000;
+}
 
 
 
