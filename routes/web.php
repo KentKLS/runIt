@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'show'])->name('showHome');
 Route::get('/cart', [CartController::class, 'show'])->name('showCart');
 
-Route::get('/catalogue/trail', function () {
-    return view('products-list');
-});
+
+Route::get('/catalogue/trail', [ProductController::class, "showProducts"])->name('showProducts');
 
 Route::get('/product-detail', function () {
     return view('product-detail');

@@ -23,15 +23,25 @@
                 </div>
             </div>
             <div class="wrapper">
-                <a href="/product-detail">
-                    <div class="cart">
-                        <img class="cart_img cart_position" src="{{ URL::asset('img/img_cart_1.jpg') }}" alt="image cart 1">
-                        <h4 class="cart_position">Hoka One One Torrent 2 M</h4>
-                        <p class="cart_position">Sa force, sa légèreté</p>
-                        <h3 class="cart_position">120€</h3>
-                    </div>
-                </a>
+                @foreach ($products as $product)
+                    {{-- @dd($product) --}}
 
+                    <a href="/product-detail">
+                        <div class="cart">
+                            <img class="cart_img cart_position" src="{{ $product->imgURL }}" alt="image cart 1">
+                            <h4 class="cart_position">{{ $product->name }}</h4>
+                            <p class="cart_position">Sa force, sa légèreté</p>
+                            <h3 class="cart_position">{{ $product->price }} </h3>
+
+                            @if ($product->stock > 0)
+                                <p class=" text-green-500 font-bold pb-2"> Produit en Stock</p>
+                            @else
+                                <p class="text-red-600 font-bold pb-2">Produit Indisponible</p>
+                            @endif
+                            <p></p>
+                        </div>
+                    </a>
+                @endforeach
             </div>
             <h3 class="pagination">1 2 3 ... 9</h3>
         </div>
