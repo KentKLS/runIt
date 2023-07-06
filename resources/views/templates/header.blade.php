@@ -1,7 +1,4 @@
 
-
-
-
 <header class="bg-[#FF7A00]  ">
     <div class="  flex justify-between container items-center m-auto ">
         <div class=" my-3 ">
@@ -43,7 +40,7 @@
             <div class="flex space-x-6 text-white font-bold mx-6 ">
                 <span><a href="/">| Home</a></span>
                 <span><a href="#">| Contact</a></span>
-                <span><a href="#">| Catalogue</a></span>
+                <span><a href="/catalogue/trail">| Catalogue</a></span>
                 <a href="/cart">
                     <svg class=" fill-white" width="28" height="26" viewBox="0 0 28 26" fill="none"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

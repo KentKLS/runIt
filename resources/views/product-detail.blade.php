@@ -7,7 +7,7 @@
         </div>
         <div class="columns border">
             <div class="columns__column product_position">
-                <img class="cart_img " src="img/img_cart_1.jpg" alt="image détail produit">
+                <img class="cart_img " src="{{URL::asset('img/img_cart_1.jpg')}}" alt="image détail produit">
             </div>
             <div class="columns__column column">
                 <p class="description_product">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper. Integer enim neque volutpat ac tincidunt vitae semper quis. Purus sit amet luctus venenatis lectus magna.</p>

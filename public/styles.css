@@ -28,10 +28,6 @@ h4{
 
 }
 
-.montserrat{
-    font-family: 'Montserrat', sans-serif;
-}
-
 .container{
     max-width: 1440px;
     margin:0 auto;
@@ -65,12 +61,24 @@ p.path{
 
 .position_catalogue{
     margin-top: 40px;
+}
 
+button{
+    display: inline-block;
+    background-color: #212121;
+    border-radius: 12px;
+    border: solid var(--color-primary);
+    text-align: center;
+    font-size: var(--font-size);
+    padding: 5px;
+    width: 180px;
+    height:45px;
+    margin-right: 10px;
+}
 .position_button{
     display: flex;
     align-items: center;
 }
-
 
 p.main{
     color: var(--color-primary) ;
@@ -79,7 +87,116 @@ p.main{
 
 .wrapper{
     display: grid;
-    grid
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px 15px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+
+.cart{
+    width: 454px;
+    height: 586px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart_img{
+    width: 400px;
+    height: 350px;
+}
+
+.cart_position{
+    margin-bottom: 30px;
+}
+
+.pagination{
+    color: var(--color-primary);
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/*CSS détail produit*/
+.product_detail{
+    background-color: #ffffff;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.title_product{
+    background-color: var(--color-primary);
+    margin-bottom: 50px;
+}
+
+.color_title{
+    color: #000000;
+    text-align: center;
+}
+.border{
+    border: solid #000000;
+    border-width: 0.5px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.product_position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-right:solid ;
+    border-right-color: #000000;
+    border-right-width: 0.5px;
+}
+.button_change_page{
+    display: inline-block;
+    background-color: var(--color-primary);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+    width: 347px;
+    height:71px;
+}
+
+.description_product{
+    padding: 40px ;
+    margin-top: 70px;
+    font-size: 20px;
+}
+
+
+.add_cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.features{
+    display: flex;
+    align-items:   center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-direction: column;
+}
+
+.feature{
+    margin-top: 10px;
+    font-weight: normal;
 }
 
 
