@@ -12,6 +12,20 @@
 h2{
     font-size: 40px;
     color: var(--color-primary);
+    font-weight: bold;
+}
+
+h3{
+    font-size: 30px;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+h4{
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+
 }
 
 .montserrat{
@@ -19,7 +33,7 @@ h2{
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1440px;
     margin:0 auto;
 }
 
@@ -46,12 +60,11 @@ main{
 }
 p.path{
     color: #ffffff;
+    padding-top: 40px;
 }
 
 .position_catalogue{
     margin-top: 40px;
-}
-
 
 .position_button{
     display: flex;
@@ -66,102 +79,7 @@ p.main{
 
 .wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 100px 15px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-}
-
-.cart{
-    width: 454px;
-    height: 586px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.cart_img{
-    width: 400px;
-    height: 350px;
-}
-
-.cart_position{
-    margin-bottom: 30px;
-}
-
-.pagination{
-    color: var(--color-primary);
-    padding-bottom: 60px;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-}
-
-/*CSS détail produit*/
-.product_detail{
-    background-color: #ffffff;
-}
-.title_product{
-    background-color: var(--color-primary);
-    margin-top: 150px;
-    margin-bottom: 50px;
-}
-
-.color_title{
-    color: #000000;
-    text-align: center;
-}
-.border{
-    border: solid #000000;
-}
-
-
-.row{
-    display: flex;
-    flex-direction: row;
-}
-.product_position{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.button_change_page{
-    display: inline-block;
-    background-color: var(--color-primary);
-    border-radius: 12px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    padding: 5px;
-    width: 347px;
-    height:71px;
-}
-
-.description_product{
-    padding: 40px ;
-}
-
-.add_cart{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-
-.features{
-    display: flex;
-    align-items:   center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    flex-direction: column;
-}
-
-.feature{
-    margin-top: 10px;
-    font-weight: normal;
+    grid
 }
 
 
