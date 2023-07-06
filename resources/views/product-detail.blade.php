@@ -13,7 +13,7 @@
                 <p class="description_product">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper. Integer enim neque volutpat ac tincidunt vitae semper quis. Purus sit amet luctus venenatis lectus magna.</p>
                 <div class="columns__column row add_cart">
                     <h3>Prix:120,00€</h3>
-                    <button class="button_change_page" type="submit">Ajouter au panier</button>
+                    <a href="/cart"> <button class="button_change_page" type="submit">Ajouter au panier</button></a>
                 </div>
             </div>
         </div>

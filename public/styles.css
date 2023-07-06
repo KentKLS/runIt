@@ -211,6 +211,10 @@ p.main{
     height: 250px;
 }
 
+.height{
+     height: 250px;
+}
+
 .columns__column_footer {
     display: flex;
     flex: 1;

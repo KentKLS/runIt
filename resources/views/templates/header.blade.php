@@ -39,7 +39,7 @@
         <nav>
             <div class="flex space-x-6 text-white font-bold mx-6 ">
                 <span><a href="/">| Home</a></span>
-                <span><a href="#">| Contact</a></span>
+                <span><a href="/contact">| Contact</a></span>
                 <span><a href="/catalogue/trail">| Catalogue</a></span>
                 <a href="/cart">
                     <svg class=" fill-white" width="28" height="26" viewBox="0 0 28 26" fill="none"

@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </form>
-                <button class="bg-[#D2F306] hover:bg-blue-700 text-black font-bold  py-2 px-4 rounded-xl ml-20 mb-[50px]">
+                <button class="bg-[#D2F306] text-black font-bold  py-2 px-4 rounded-xl ml-20 mb-[50px]">
                     Envoyer
                 </button>
             </div>
