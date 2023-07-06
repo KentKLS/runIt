@@ -41,9 +41,9 @@
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
                 <form action="" >
-                    <input type="button" onclick="decrementValue()" class="px-1 font-extrabold text-xl text-[#FF7A00]"value="-" />
+                    <input type="button" onclick="decrementValue()" class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="-" />
                     <input type="text" id="number" value="1" class=" w-8 text-center" disabled="disabled">
-                    <input type="button" onclick="incrementValue()" class="px-1 font-extrabold text-xl text-[#FF7A00]"value="+" />
+                    <input type="button" onclick="incrementValue()" class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="+" />
 
                 </form>
             </div>
@@ -70,7 +70,7 @@
             </div>
             <hr class=" bg-black w-4/5 ">
 
-            <button class="rounded font-bold w-3/4  p-2 bg-[#D2F306]"> Poursuivre la commande</button>
+            <button class="rounded font-bold w-3/4 flex items-center justify-center  p-2 bg-[#D2F306]"> Poursuivre la commande</button>
         </div>
     </div>
 @endsection
