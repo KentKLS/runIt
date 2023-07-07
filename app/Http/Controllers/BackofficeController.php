@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\addProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,11 @@ class BackofficeController extends Controller
     }
 
 
-    public function addProduct(Request $request)
+
+
+    public function addProduct(addProductRequest $request)
     {
+
         $newData = new Product();
         $newData->name = $request->name;
         $newData->price = $request->price;

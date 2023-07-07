@@ -6,6 +6,7 @@
         </h2>
     </x-slot>
 </x-app-layout>
+
 <div class=" max-w-6xl mx-auto">
     <div class="flex justify-center">Ajouté un Nouveau Produit a la BDD</div>
     <form method="POST" action="{{ route('addProductStored') }} ">
@@ -55,3 +56,5 @@
         </div>
     </form>
 </div>
+
+
