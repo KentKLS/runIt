@@ -27,6 +27,8 @@ Route::get('/catalogue/name', [ProductController::class, "showProductsOrderedByN
 Route::get('/catalogue/price', [ProductController::class, "showOrderedByGrowingPrice"]);
 Route::get('/product/{id}', [ProductController::class, "showProduct"]);
 Route::get('/backoffice/addproduct', [BackofficeController::class, "showAddProduct"])->middleware('auth','admin')->name('addProduct');
+Route::post('/backoffice/addproduct/stored', [BackofficeController::class, "addProduct"])->middleware('auth','admin')->name('addProductStored');
+
 
 Route::get('/home', [UserHomeController::class, "index"])->middleware('auth')->name('home');
 

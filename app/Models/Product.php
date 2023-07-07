@@ -9,6 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $guarded =['id'];
+    protected $guarded =['id', 'updated_at', 'created_at' ];
 
 }
