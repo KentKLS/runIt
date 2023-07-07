@@ -20,7 +20,11 @@ Route::get('/cart', [CartController::class, 'show'])->name('showCart');
 
 
 Route::get('/catalogue/trail', [ProductController::class, "showProducts"])->name('showProducts');
+Route::get('/catalogue/name', [ProductController::class, "showProductsOrderedByName"]);
+Route::get('/catalogue/price', [ProductController::class, "showOrderedByGrowingPrice"]);
+Route::get('/product/{id}', [ProductController::class, "showProduct"]);
 
-Route::get('/product-detail', function () {
-    return view('product-detail');
-});
+
+
+
+
