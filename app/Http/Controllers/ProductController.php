@@ -13,29 +13,19 @@ class ProductController extends Controller
         $products = Product::all();
         return view('products-list', compact('products'));
     }
-
     public function showProductsOrderedByName()
     {
         $products = Product::orderBy('name')->get();
-
         return view('products-list', compact('products'));
     }
-
     public function showOrderedByGrowingPrice()
     {
-
         $products = Product::orderBy('price', 'asc')->get();
-
         return view('products-list', compact('products'));
     }
     public function showProduct($id)
     {
-
         $product = Product::findOrFail($id);
-
-        return view('product-detail', ['product'=> $product])
-            ->with('key', $id);
+        return view('product-detail', ['product' => $product])->with('key', $id);
     }
-
-
 }
