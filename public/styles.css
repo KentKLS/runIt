@@ -172,6 +172,10 @@ p.main{
     height:71px;
 }
 
+.disabled{
+    background-color: #9ca3af;
+}
+
 .description_product{
     padding: 40px ;
     margin-top: 70px;

@@ -18,7 +18,7 @@
 
 
         <div class="wrapper">
-            @foreach ($products as $product):
+            @foreach ($products as $product)
             <a href="/product/{{$product->id}}">
                 <div class="cart">
                     <img class="cart_img cart_position" src="{{$product->imgURL}}" alt="image cart {{$product->id}}">

@@ -13,7 +13,15 @@
                 <p class="description_product">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper. Integer enim neque volutpat ac tincidunt vitae semper quis. Purus sit amet luctus venenatis lectus magna.</p>
                 <div class="columns__column row add_cart">
                     <h3>{{$products->price}}</h3>
-                    <a href="/cart/{{$products->id}}"> <button class="button_change_page" type="submit">Ajouter au panier</button></a>
+                    @if($products['stock']===0)
+                        <a href="/cart/{{$products->id}}">
+                            <button class="button_change_page disabled" type="submit" disabled>Ajouter au panier</button>
+                        </a>
+                    @else
+                    <a href="/cart/{{$products->id}}">
+                        <button class="button_change_page" type="submit">Ajouter au panier</button>
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>
