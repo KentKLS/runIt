@@ -1,16 +1,7 @@
 import './bootstrap';
 
-function incrementValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    document.getElementById('number').value = value;
-}
+import Alpine from 'alpinejs';
 
-function decrementValue() {
-    var value = parseInt(document.getElementById('number').value, 10);
-    value--;
-    value = value <= 1 ? 1 : value;
+window.Alpine = Alpine;
 
-    document.getElementById('number').value = value;
-}
+Alpine.start();
