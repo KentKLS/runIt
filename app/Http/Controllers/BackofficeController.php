@@ -6,16 +6,9 @@ use Illuminate\Http\Request;
 
 class BackofficeController extends Controller
 {
-    public function restrictedShow(Request $request)
+    public function showAddProduct()
     {
-        $password = $request->input('password');
-
-        if ($password !== 'adminKL$180896'){
-            return redirect()->back()->withErrors('Mot de passe erroné');
-        }else{
-            return view('restrictedShow');
-        }
-
+        return view('backoffice.addProduct');
 
     }
 }
