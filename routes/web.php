@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\BackofficeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
@@ -23,6 +25,8 @@ Route::get('/catalogue/trail', [ProductController::class, "showProducts"])->name
 Route::get('/catalogue/name', [ProductController::class, "showProductsOrderedByName"]);
 Route::get('/catalogue/price', [ProductController::class, "showOrderedByGrowingPrice"]);
 Route::get('/product/{id}', [ProductController::class, "showProduct"]);
+Route::get('/backoffice', [BackofficeController::class, "restrictedShow"]);
+
 
 
 
