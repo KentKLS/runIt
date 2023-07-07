@@ -33,7 +33,7 @@
                         </div>
                     @else
                         <a href="/product/{{$product->id}}">
-                            <div class="cart  hover:shadow-md hover:shadow-slate-300">
+                            <div class="cart  specialShadow">
                                 <img class="cart_img cart_position" src="{{ $product->imgURL }}" alt="image cart 1">
                                 <h4 class="cart_position">{{ $product->name }}</h4>
                                 <p class="cart_position">{{$product->oneliner}}</p>

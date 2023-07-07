@@ -282,7 +282,7 @@ p.footer_1 {
     border: 1px outset #c7c6c6;
   }
 
-  .specialShadow{
-    -webkit-box-shadow: inset 0px -10px 27px -8px #A31925, 5px 5px 15px 5px rgba(0,0,0,0);
-box-shadow: inset 0px -10px 27px -8px #A31925, 5px 5px 15px 5px rgba(0,0,0,0);
+  .specialShadow:hover {
+    -webkit-box-shadow: inset 0px -10px 27px -8px #000, 5px 5px 15px 5px rgba(0,0,0,0);
+box-shadow: inset 0px -10px 27px -8px #000, 5px 5px 15px 5px rgba(0,0,0,0);
   }
