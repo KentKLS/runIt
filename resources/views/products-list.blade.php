@@ -14,16 +14,24 @@
                 <button type="button"><p class="main">Accessoires</p></button>
             </div>
         </div>
+
+
+
         <div class="wrapper">
-            <a href="/product-detail">
-            <div class="cart">
-                <img class="cart_img cart_position" src="{{URL::asset('img/img_cart_1.jpg')}}" alt="image cart 1">
-                <h4 class="cart_position">Hoka One One Torrent 2 M</h4>
-                <p class="cart_position">Sa force, sa légèreté</p>
-                <h3 class="cart_position">120€</h3>
-            </div>
+            @foreach ($products as $product):
+            <a href="/product/{{$product->id}}">
+                <div class="cart">
+                    <img class="cart_img cart_position" src="{{$product->imgURL}}" alt="image cart {{$product->id}}">
+                    <h4 class="cart_position">{{$product->name}}</h4>
+                    <p class="cart_position">{{$product->oneliner}}</p>
+                    <h3 class="cart_position">{{$product->price}}</h3>
+                </div>
             </a>
+            @endforeach;
         </div>
+
+
+
         <h3 class="pagination">1 2 3 ... 9</h3>
     </div>
 </main>

@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'show'])->name('showHome');
-Route::get('/cart', [CartController::class, 'show'])->name('showCart');
+Route::get('/cart/{id}', [CartController::class, 'show'])->name('showCart');
 Route::get('/catalogue/trail', [ProductController::class, 'show'])->name('showCatalogueTrail');
-Route::get('/product-detail', [ProductController::class, 'detail'])->name('showProductDetail');
+Route::get('/product/{id}', [ProductController::class, 'detail'])->name('showProductDetail');
 Route::get('/contact', [ContactController::class, 'show'])->name('showContact');
 
 

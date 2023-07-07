@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
 
 class CartController extends Controller
 {
-    public function show()
+    public function show($id)
     {
-        return view('cart');
+        $product = DB::table('products')->where('id', $id)->first();
+        return view('cart',['products' => $product]);
+
     }
 }

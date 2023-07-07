@@ -33,11 +33,11 @@
 
             </div>
             <div class="col-span-2 row-span-3 flex flex-col items-center justify-center">
-                <div class="font-bold">Nom du Produit</div>
-                <img src="{{ URL::asset('Image/crosscall-x-chest-electronique-269219-1-f.jpg') }}" alt="" class=" w-3/4 ">
+                <div class="font-bold">{{$products->name}}</div>
+                <img src="{{$products->imgURL}}" alt="" class=" w-3/4 ">
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
-                <p class=" flex items-center justify-center ">118€</p>
+                <p class=" flex items-center justify-center ">{{$products->price}}</p>
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
                 <form action="" >
@@ -48,14 +48,14 @@
                 </form>
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
-                <p>118€</p>
+                <p>{{$products->price}}</p>
             </div>
         </div>
         <div class='row-span-4 col-span-2 flex justify-evenly flex-col items-center outline outline-neutral-400'>
             <div class="flex justify-between w-full px-8">
                 <p> Sous-total</p>
 
-                <p>118€</p>
+                <p>{{$products->price}}</p>
             </div>
             <hr class=" bg-black w-4/5 ">
             <div class="flex justify-between w-full px-8">
@@ -66,7 +66,7 @@
 
             <div class="flex font-extrabold justify-between w-full px-8">
                 <p>total TTC</p>
-                <p>128€</p>
+                <p>{{$products->price}}</p>
             </div>
             <hr class=" bg-black w-4/5 ">
 
