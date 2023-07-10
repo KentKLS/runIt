@@ -26,8 +26,23 @@ Route::get('/catalogue/trail', [ProductController::class, "showProducts"])->name
 Route::get('/catalogue/name', [ProductController::class, "showProductsOrderedByName"]);
 Route::get('/catalogue/price', [ProductController::class, "showOrderedByGrowingPrice"]);
 Route::get('/product/{id}', [ProductController::class, "showProduct"]);
-Route::get('/backoffice/addproduct', [BackofficeController::class, "showAddProduct"])->middleware('auth','admin')->name('addProduct');
-Route::post('/backoffice/addproduct/stored', [BackofficeController::class, "addProduct"])->middleware('auth','admin')->name('addProductStored');
+
+
+Route::get('/backoffice/product/add', [BackofficeController::class, "showAddProduct"])->middleware('auth','admin')->name('addProduct');
+Route::post('/backoffice/product/stored', [BackofficeController::class, "addProduct"])->middleware('auth','admin')->name('addProductStored');
+Route::get('/backoffice/data', [BackofficeController::class, "showSeeData"])->middleware('auth','admin')->name('showSeeData');
+Route::post('/backoffice/data/get', [BackofficeController::class, "getData"])->middleware('auth','admin')->name('getData');
+Route::get('/backoffice/product/delete',[BackofficeController::class, "showDeleteProduct"])->middleware('auth','admin')->name('deleteProduct');
+Route::post('/backoffice/product/deleted',[BackofficeController::class, "deleteProduct"])->middleware('auth','admin')->name('productDeleted');
+
+Route::get('/backoffice/products',[BackofficeController::class, "showProducts"])->middleware('auth','admin')->name('backofficeProducts');
+Route::get('/backoffice/product/modify/{id}',[BackofficeController::class, "showProductToModify"])->middleware('auth','admin')->name('productToModify');
+Route::post('/backoffice/product/{id}/modified',[BackofficeController::class, "modifyProduct"])->middleware('auth','admin')->name('productModified');
+
+
+
+
+
 
 
 Route::get('/home', [UserHomeController::class, "index"])->middleware('auth')->name('home');

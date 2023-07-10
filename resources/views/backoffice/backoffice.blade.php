@@ -14,8 +14,12 @@
             </div>
         </div>
     </div>
-    <div class=" max-w-6xl mx-auto flex justify-center">
-        <a href="/backoffice/addproduct"> Allé a la page d'ajout Produit</a>
+    <div class=" max-w-6xl mx-auto gap-3  flex justify-center h-screen text-gray-100">
+        <a href="{{route('addProduct')}}"> Aller a la page d'ajout Produit</a>
+        <a href="{{route('showSeeData')}}">Aller a la page Visualisation Données</a>
+        <a href="{{route('deleteProduct')}}">Aller a la page suppression produit</a>
+        <a href="{{route('backofficeProducts')}}">Aller a la page modification</a>
+
     </div>
 </x-app-layout>
 
