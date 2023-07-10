@@ -1,31 +1,41 @@
-@extends('templates.template')
-@section('content')
-    <form action="{{url('addProduct')}}" method="post">
-        {{csrf_field()}}
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Nom du produit</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="name" placeholder="Nom du produit">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Ajouter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Modifier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Supprimer</a>
+                </li>
+            </ul>
         </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Prix</label>
-            <input type="number" class="form-control" id="formGroupExampleInput" name="price" placeholder="Prix">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Url image</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="imgURL" placeholder="Url image">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Phrase d'accroche</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="oneliner" placeholder="Phrase d'accroche">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Courte description produit</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="description" placeholder="Courte description produit">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Stock</label>
-            <input type="number" class="form-control" id="formGroupExampleInput2" name="stock" placeholder="Stock">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-@endsection
+    </div>
+</nav>
+@yield('content')
+
+
+</body>
+</html>
+
