@@ -12,8 +12,9 @@ class addProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
+
         $usertype = Auth()->user()->usertype;
-        if ($usertype=='admin') {
+        if ($usertype == 'admin') {
             return true;
         }
     return false;
@@ -27,13 +28,12 @@ class addProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required',
-            'price'=>'required|min:100',
-            'image'=>'required',
-            'oneliner'=>'required',
-            'description'=>'required',
-            'stock'=>'required|min:0',
-
+            'name'=>'required|string',
+            'price'=>'integer|required|min:100',
+            'image'=>'required|string',
+            'oneliner'=>'required|string',
+            'description'=>'required|string',
+            'stock'=>'integer|required|min:0',
         ];
     }
 }
