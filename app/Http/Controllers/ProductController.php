@@ -13,8 +13,6 @@ class ProductController extends Controller
         //$products = Product::orderBy('name')->get();
         //$products = Product::orderBy('price','asc')->get();
         $products = Product::select('*')->get();
-
-
         return view('products-list', ['products' => $products]);
     }
 
