@@ -14,10 +14,10 @@
     <script src="{{URL::asset('script.js') }}">
 </head>
 <body>
-    @include('templates.header')
+    @include('templates.include.header')
 
     @yield('content')
-    @include('templates.footer')
+    @include('templates.include.footer')
 </body>
 
 </html>

@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    @include('templates.header')
+    @include('templates.include.header')
     @include('hero')
     @yield('content')
-    @include('templates.footer')
+    @include('templates.include.footer')
 </body>
 
 </html>
