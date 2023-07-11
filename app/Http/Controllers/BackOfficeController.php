@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class BackOfficeController extends Controller
 {
     public function home(){
-        return view('home-backoffice');
+        $products = Product::all();
+        return view('home-backoffice',["products"=>$products]);
     }
     public function backOffice(){
         return view('add-product');
@@ -24,7 +25,7 @@ class BackOfficeController extends Controller
         $product->description = $request->description;
         $product->stock = $request->stock;
         $product->save();
-        return redirect('/run-it.com/backoffice/home')->with('status', 'Le produit a bien été ajouté');
+        return redirect('/backoffice/home')->with('status', 'Le produit a bien été ajouté');
     }
 
     public function updateView($id){
@@ -40,7 +41,7 @@ class BackOfficeController extends Controller
         $product->description = $request->description;
         $product->stock = $request->stock;
         $product->update();
-        return redirect("/run-it.com/backoffice/home")->with('status', 'Le produit a bien été mis à jour');
+        return redirect("/backoffice/home")->with('status', 'Le produit a bien été mis à jour');
     }
 
     public function deleteView($id){
@@ -50,7 +51,7 @@ class BackOfficeController extends Controller
     public function deleteProduct($id){
         $product = Product::find($id);
         $product->delete();
-        return redirect("/run-it.com/backoffice/home")->with('status', 'Le produit a bien été supprimer');
+        return redirect("/backoffice/home")->with('status', 'Le produit a bien été supprimer');
 
     }
 }

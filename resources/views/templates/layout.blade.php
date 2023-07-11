@@ -18,16 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/backoffice/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Ajouter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Modifier</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link">Supprimer</a>
+                    <a class="nav-link" href="/backoffice/product">Ajouter</a>
                 </li>
             </ul>
         </div>

@@ -23,12 +23,12 @@ Route::get('/cart/{id}', [CartController::class, 'show'])->name('showCart');
 Route::get('/catalogue/trail', [ProductController::class, 'show'])->name('showCatalogueTrail');
 Route::get('/product/{id}', [ProductController::class, 'detail'])->name('showProductDetail');
 Route::get('/contact', [ContactController::class, 'show'])->name('showContact');
-Route::get('/run-it.com/backoffice/home', [BackOfficeController::class, 'home']);
-Route::get('/run-it.com/backoffice/product', [BackOfficeController::class, 'backOffice']);
+Route::get('/backoffice/home', [BackOfficeController::class, 'home']);
+Route::get('/backoffice/product', [BackOfficeController::class, 'backOffice']);
 Route::post('/addProduct', [BackOfficeController::class, 'addProduct']);
-Route::get('/run-it.com/backoffice/product/{id}/edit', [BackOfficeController::class, 'updateView']);
+Route::get('/backoffice/product/{id}/edit', [BackOfficeController::class, 'updateView']);
 Route::post('/updateProduct/{id}', [BackOfficeController::class, 'updateProduct']);
-Route::get('/run-it.com/backoffice/product/{id}/edit/delete', [BackOfficeController::class, 'deleteView']);
+Route::get('/backoffice/product/{id}/edit/delete', [BackOfficeController::class, 'deleteView']);
 Route::post('/deleteProduct/{id}', [BackOfficeController::class, 'deleteProduct']);
 
 

@@ -27,7 +27,7 @@
                     <h3 class="cart_position">{{$product->price}}</h3>
                 </div>
             </a>
-            @endforeach;
+            @endforeach
         </div>
 
 

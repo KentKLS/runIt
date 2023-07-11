@@ -1,6 +1,6 @@
 @extends('templates.layout')
 @section('content')
-    <form action="{{url('addProduct')}}" method="post">
+    <form action="{{url('addProduct')}}" method="post" class="container -sm">
         {{csrf_field()}}
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Nom du produit</label>
@@ -26,6 +26,6 @@
             <label for="formGroupExampleInput2" class="form-label">Stock</label>
             <input type="number" class="form-control" id="formGroupExampleInput2" name="stock" placeholder="Stock">
         </div>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="button" class="btn btn-success">Ajouter</button>
     </form>
 @endsection

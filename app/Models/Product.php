@@ -11,5 +11,15 @@ class Product extends Model
 {
     use HasFactory;
 
+    public function productCategotyRelation()
+    {
+        return $this->hasOne(Category::class);
+    }
+
+    public function productCartRelation()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
 
 }
