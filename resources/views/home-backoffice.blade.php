@@ -14,8 +14,18 @@
         <tr>
             <th scope="row">{{$product->id}}</th>
             <td>{{$product->name}}</td>
-            <td><a href="{{url('/backoffice/product/' . $product->id . '/edit')}}"><button type="button" class="btn btn-warning">Modifier</button></a></td>
-            <td><a href="{{url('/backoffice/product/' . $product->id . '/edit/delete')}}"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+            <td>
+                <a href="{{route('show.update' , ["product"=> $product] )}}" type="button" class="btn btn-warning">
+                     Modifier
+                </a>
+            </td>
+            <td>
+                <form action="{{route('product.destroy', ["product"=> $product]) }}" method="post" onclick="return confirm('Etes vous sur de vouloir supprimer ce produit')">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" class="btn btn-danger" value="Supprimer">
+                </form>
+            </td>
         </tr>
         @endforeach
         </tbody>

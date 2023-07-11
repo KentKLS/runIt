@@ -2,8 +2,9 @@
 @section('content')
 
 
-    <form action="{{url('updateProduct/' . $products->id)}}" method="post" class="container -sm">
-        {{csrf_field()}}
+    <form action="{{route('redirect.update',$products->id)}}" method="post" class="container -sm">
+        @csrf
+        @method('put')
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Nom du produit</label>
             <input type="text" class="form-control" id="formGroupExampleInput"  value="{{$products->name}}" name="name" placeholder="Nom du produit">
@@ -28,6 +29,6 @@
             <label for="formGroupExampleInput2" class="form-label">Stock</label>
             <input type="number" class="form-control" id="formGroupExampleInput2" name="stock" value="{{$products->stock}}" placeholder="Stock">
         </div>
-        <button type="button" class="btn btn-warning">Modifier</button></a></td>
+        <button type="submit" class="btn btn-warning">Modifier</button>
     </form>
 @endsection

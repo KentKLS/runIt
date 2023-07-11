@@ -24,12 +24,12 @@
     <div class="w-full grid grid-cols-2 ">
         <div class="relative object-fill">
             <img src="{{ URL::asset('Image/ImageTrail.png') }}" alt="" >
-            <a href="#" class="absolute z-50 text-2xl font-bold  text-[#D2F306] bottom-10 left-10">TRAIL</h2>
+            <a href="/catalogue/trail" class="absolute z-50 text-2xl font-bold  text-[#D2F306] bottom-10 left-10">TRAIL</h2>
 
         </div>
         <div class="relative object-fill">
 
-            <a href="#" class="absolute z-50 text-2xl font-bold  text-[#D2F306] bottom-10 right-10">RUNNING</a>
+            <a href="/catalogue/trail" class="absolute z-50 text-2xl font-bold  text-[#D2F306] bottom-10 right-10">RUNNING</a>
             <img src="{{ URL::asset('Image/ImageRunning.png') }}" alt="" >
 
         </div>

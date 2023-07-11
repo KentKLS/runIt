@@ -23,13 +23,13 @@ Route::get('/cart/{id}', [CartController::class, 'show'])->name('showCart');
 Route::get('/catalogue/trail', [ProductController::class, 'show'])->name('showCatalogueTrail');
 Route::get('/product/{id}', [ProductController::class, 'detail'])->name('showProductDetail');
 Route::get('/contact', [ContactController::class, 'show'])->name('showContact');
-Route::get('/backoffice/home', [BackOfficeController::class, 'home']);
-Route::get('/backoffice/product', [BackOfficeController::class, 'backOffice']);
-Route::post('/addProduct', [BackOfficeController::class, 'addProduct']);
-Route::get('/backoffice/product/{id}/edit', [BackOfficeController::class, 'updateView']);
-Route::post('/updateProduct/{id}', [BackOfficeController::class, 'updateProduct']);
-Route::get('/backoffice/product/{id}/edit/delete', [BackOfficeController::class, 'deleteView']);
-Route::post('/deleteProduct/{id}', [BackOfficeController::class, 'deleteProduct']);
+
+Route::get('/backoffice/home', [BackOfficeController::class, 'index'])->name('home.backoffice');;
+Route::get('/backoffice/product', [BackOfficeController::class, 'showCreate'])->name('show.create');;
+Route::post('/addProduct', [BackOfficeController::class, 'create'])->name('redirect.create');;
+Route::get('/backoffice/product/{product}/edit', [BackOfficeController::class, 'showUpdate'])->name('show.update');;
+Route::put('/updateProduct/{product}', [BackOfficeController::class, 'update'])->name('redirect.update');;
+Route::delete('/deleteProduct/{product}', [BackOfficeController::class, 'destroy'])->name('product.destroy');;
 
 
 

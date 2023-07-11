@@ -11,15 +11,15 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function productCategotyRelation()
+    public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->hasOne(Category::class, 'category_key');
     }
 
-    public function productCartRelation()
-    {
-        return $this->hasMany(Cart::class);
-    }
+//    public function productCartRelation()
+//    {
+//        return $this->hasMany(Cart::class);
+//    }
 
 
 }

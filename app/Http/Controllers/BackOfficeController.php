@@ -8,15 +8,17 @@ use Illuminate\Http\Request;
 
 class BackOfficeController extends Controller
 {
-    public function home(){
+    public function index(){
+
         $products = Product::all();
         return view('home-backoffice',["products"=>$products]);
+
     }
-    public function backOffice(){
+    public function showCreate(){
         return view('add-product');
     }
 
-    public function addProduct(Request $request){
+    public function create(Request $request){
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
@@ -25,15 +27,13 @@ class BackOfficeController extends Controller
         $product->description = $request->description;
         $product->stock = $request->stock;
         $product->save();
-        return redirect('/backoffice/home')->with('status', 'Le produit a bien été ajouté');
+        return redirect()->route('home.backoffice');
     }
 
-    public function updateView($id){
-        $product=Product::find($id);
+    public function showUpdate(Product $product){
         return view('update-product',['products' => $product]);
     }
-    public function updateProduct(Request $request ,$id){
-        $product=Product::find($id);
+    public function update(Request $request ,Product $product){
         $product->name = $request->name;
         $product->price = $request->price;
         $product->imgURL = $request->imgURL;
@@ -41,17 +41,13 @@ class BackOfficeController extends Controller
         $product->description = $request->description;
         $product->stock = $request->stock;
         $product->update();
-        return redirect("/backoffice/home")->with('status', 'Le produit a bien été mis à jour');
+        return redirect()->route('home.backoffice');
     }
 
-    public function deleteView($id){
-        $product=Product::find($id);
-        return view('delete-product',['products' => $product]);
-    }
-    public function deleteProduct($id){
-        $product = Product::find($id);
+
+    public function destroy(Product $product){
         $product->delete();
-        return redirect("/backoffice/home")->with('status', 'Le produit a bien été supprimer');
+        return redirect()->route('home.backoffice');
 
     }
 }
