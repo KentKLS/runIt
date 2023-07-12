@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\BackOfficeCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +32,10 @@ Route::get('/backoffice/product/{product}/edit', [BackOfficeController::class, '
 Route::put('/updateProduct/{product}', [BackOfficeController::class, 'update'])->name('redirect.update');;
 Route::delete('/deleteProduct/{product}', [BackOfficeController::class, 'destroy'])->name('product.destroy');;
 
-
+Route::get('/backoffice/home-category', [BackOfficeCategoryController::class, 'index'])->name('home.backoffice.category');;
+Route::get('/backoffice/category', [BackOfficeCategoryController::class, 'showCreate'])->name('show.create.category');;
+Route::post('/addCategory', [BackOfficeCategoryController::class, 'create'])->name('redirect.create.category');;
+Route::get('/backoffice/category/{category}/edit', [BackOfficeCategoryController::class, 'showUpdate'])->name('show.update.category');;
+Route::put('/updateProduct/{category}', [BackOfficeCategoryController::class, 'update'])->name('redirect.update.category');;
+Route::delete('/deleteProduct/{category}', [BackOfficeCategoryController::class, 'destroy'])->name('product.destroy.category');;
 

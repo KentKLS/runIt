@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('oneliner');
             $table->text('description');
             $table->integer('stock');
-            $table->dateTime('updated_at');
-            $table->dateTime('created_at');
+            $table->timestamps();
+            $table->foreignId('category_id')->constrained();
         });
     }
 

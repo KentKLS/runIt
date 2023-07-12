@@ -1,7 +1,7 @@
 @extends('templates.layout')
 @section('content')
     <form action="{{route('redirect.create')}}" method="post" class="container">
-        {{csrf_field()}}
+        @csrf
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Nom du produit</label>
             <input type="text" class="form-control" id="formGroupExampleInput" name="name" placeholder="Nom du produit">

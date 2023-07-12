@@ -23,6 +23,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/backoffice/product">Ajouter</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/backoffice/home-category">Catégorie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/backoffice/category">Ajouter Catégorie</a>
+                </li>
             </ul>
         </div>
     </div>
