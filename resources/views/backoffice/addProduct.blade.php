@@ -5,7 +5,7 @@
 
 
 
-<div class=" bg-slate-800 py-24">
+<div class=" bg-slate-800 py-24 text-gray-100">
     <div class=" max-w-6xl mx-auto">
         <div class="flex justify-center">Ajouté un Nouveau Produit a la BDD</div>
         @if ($errors->any())
