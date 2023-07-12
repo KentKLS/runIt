@@ -8,10 +8,10 @@
                 <h2>Trail</h2>
             </div>
             <div class="columns__column position_button">
-                <button type="button"><p class="main">Chaussures</p></button>
-                <button type="button"><p class="main">Vêtements</p></button>
-                <button type="button"><p class="main">Electro</p></button>
-                <button type="button"><p class="main">Accessoires</p></button>
+                <a href="/catalogue/trail/chaussures"><button type="button"><p class="main">Chaussures</p></button></a>
+                <a href="/catalogue/trail/vetements"><button type="button"><p class="main">Vêtements</p></button></a>
+                <a href="/catalogue/trail/electronique"><button type="button"><p class="main">Electro</p></button></a>
+                <a href="/catalogue/trail/accessoires"><button type="button"><p class="main">Accessoires</p></button></a>
             </div>
         </div>
 

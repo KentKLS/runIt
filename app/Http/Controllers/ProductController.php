@@ -24,6 +24,27 @@ class ProductController extends Controller
 
     }
 
+    public function chaussures(){
+        $products=Product::where('category_id', 1)->get();
+        return view('products-list',['products' => $products]);
+    }
+
+    public function vetements(){
+        $products=Product::where('category_id', 2)->get();
+        return view('products-list',['products' => $products]);
+    }
+
+    public function electronique(){
+        $products=Product::where('category_id', 3)->get();
+        return view('products-list',['products' => $products]);
+    }
+
+    public function accessoires(){
+        $products=Product::where('category_id', 4)->get();
+        return view('products-list',['products' => $products]);
+    }
+
+
 
 
 }
