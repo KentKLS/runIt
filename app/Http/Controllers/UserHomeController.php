@@ -14,14 +14,14 @@ class UserHomeController extends Controller
     {
         if (Auth::id()) {
             $usertype = Auth()->user()->usertype;
-            if ($usertype == 'user') {
-                return view('dashboard');
-            } else if ($usertype == 'admin') {
+            if ($usertype == 'admin') {
                 return view('backoffice.backoffice');
-            } else {
-                return redirect()->back();
             }
+
+            return view('backoffice');
         }
+
+        return redirect()->route('showHome');
     }
 
 }
