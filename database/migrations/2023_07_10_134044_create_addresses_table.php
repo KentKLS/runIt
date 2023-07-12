@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('addresse livraison');
-            $table->string('addresse facturation');
-            $table->string('phone number');
+            $table->string('addresse_livraison');
+            $table->string('addresse_facturation');
+            $table->string('phone_number');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
