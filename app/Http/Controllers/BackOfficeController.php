@@ -26,6 +26,7 @@ class BackOfficeController extends Controller
         $product->oneliner = $request->oneliner;
         $product->description = $request->description;
         $product->stock = $request->stock;
+        $product->category_id = $request->category_id;
         $product->save();
         return redirect()->route('home.backoffice');
     }

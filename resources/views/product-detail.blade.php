@@ -18,7 +18,7 @@
                             <button class="button_change_page disabled" type="submit" disabled>Ajouter au panier</button>
                         </a>
                     @else
-                    <a href="/cart/{{$products->id}}">
+                    <a href="/cart">
                         <button class="button_change_page" type="submit">Ajouter au panier</button>
                     </a>
                     @endif

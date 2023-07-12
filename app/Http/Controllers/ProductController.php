@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -25,27 +26,28 @@ class ProductController extends Controller
     }
 
     public function chaussures(){
-        $products=Product::where('category_id', 1)->get();
+        $category=Category::find(1);
+        $products=$category->products;
         return view('products-list',['products' => $products]);
     }
 
     public function vetements(){
-        $products=Product::where('category_id', 2)->get();
+        $category=Category::find(2);
+        $products=$category->products;
         return view('products-list',['products' => $products]);
     }
 
     public function electronique(){
-        $products=Product::where('category_id', 3)->get();
+        $category=Category::find(3);
+        $products=$category->products;
         return view('products-list',['products' => $products]);
     }
 
     public function accessoires(){
-        $products=Product::where('category_id', 4)->get();
+        $category=Category::find(4);
+        $products=$category->products;
         return view('products-list',['products' => $products]);
     }
-
-
-
 
 }
 

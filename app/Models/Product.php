@@ -13,13 +13,13 @@ class Product extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
-//    public function productCartRelation()
-//    {
-//        return $this->hasMany(Cart::class);
-//    }
+    public function cart()
+    {
+        return $this->belongsToMany(Cart::class);
+    }
 
 
 }

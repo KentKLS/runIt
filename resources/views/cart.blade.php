@@ -16,46 +16,40 @@
             <div class="col-span-2 row-span-1 flex items-center justify-center ">
                 <p>Produit</p>
             </div>
-
-
             <div class="col-span-1 flex items-center justify-center">
                 <p>Prix unitaire</p>
-
             </div>
             <div class="col-span-1  flex items-center justify-center ">
                 <p>Quantité</p>
-
-
-
             </div>
             <div class="col-span-1 flex items-center justify-center">
                 <p>Prix total</p>
-
             </div>
+            @foreach(session("cartSession") as $key=> $products)
             <div class="col-span-2 row-span-3 flex flex-col items-center justify-center">
-                <div class="font-bold">{{$products->name}}</div>
-                <img src="{{$products->imgURL}}" alt="" class=" w-3/4 ">
+                <div class="font-bold">{{$products['name']}}</div>
+                <img src="{{$products['imgURL']}}" alt="" class=" w-3/4 ">
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
-                <p class=" flex items-center justify-center ">{{$products->price}}</p>
+                <p class=" flex items-center justify-center ">{{$products['price']}}</p>
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
                 <form action="" >
                     <input type="button" onclick="decrementValue()" class="px-1 font-extrabold text-xl text-[#FF7A00]"value="-" />
                     <input type="text" id="number" value="1" class=" w-8 text-center" disabled="disabled">
                     <input type="button" onclick="incrementValue()" class="px-1 font-extrabold text-xl text-[#FF7A00]"value="+" />
-
                 </form>
             </div>
             <div class="col-span-1 row-span-1 flex items-center justify-center">
-                <p>{{$products->price}}</p>
+                <p>{{$products['price']}}</p>
             </div>
         </div>
+        @endforeach
         <div class='row-span-4 col-span-2 flex justify-evenly flex-col items-center outline outline-neutral-400'>
             <div class="flex justify-between w-full px-8">
                 <p> Sous-total</p>
 
-                <p>{{$products->price}}</p>
+                <p>{{$products['price']}}</p>
             </div>
             <hr class=" bg-black w-4/5 ">
             <div class="flex justify-between w-full px-8">
@@ -66,7 +60,7 @@
 
             <div class="flex font-extrabold justify-between w-full px-8">
                 <p>total TTC</p>
-                <p>{{$products->price}}</p>
+                <p>{{$products['price']}}</p>
             </div>
             <hr class=" bg-black w-4/5 ">
 
