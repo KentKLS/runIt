@@ -18,7 +18,7 @@ class UserHomeController extends Controller
                 return view('backoffice.backoffice');
             }
 
-            return view('backoffice');
+            return view('dashboard');
         }
 
         return redirect()->route('showHome');

@@ -30,7 +30,7 @@ class BackofficeProductController extends Controller
         $newData->stock = $request->stock;
         $newData->category_id = $request->category_id;
         $newData->save();
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success','Produit ajouté avec succès');
     }
     public function edit(Product $product)
     {
@@ -46,12 +46,12 @@ class BackofficeProductController extends Controller
         $product->stock = $request->stock;
         $product->category_id = $request->category_id;
         $product->save();
-        return view('backoffice.ModifySuccess');
+        return redirect()->route('product.index')->with('success','Produit modifié avec succès');
     }
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('delete','Produit supprimé');
     }
 }
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Validation\Rules\Password;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,32 +11,42 @@ class BackofficeUserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('backoffice.', compact('users'));
+        return view('backoffice.indexUser', compact('users'));
     }
     public function create()
     {
-        return view('backoffice.');
+        return view('backoffice.createUser');
     }
-    public function store( $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'token' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'confirmed', Password::defaults()],
+        ]);
         $newData = new User();
         $newData->name = $request->name;
         $newData->email = $request->email;
         $newData->password = $request->image;
         $newData->save();
-        return redirect()->route('product.index');
+        return redirect()->route('user.index');
     }
     public function edit(User $user)
     {
-        return view('backoffice.')->with('product', $user);
+        return view('backoffice.editUser')->with('product', $user);
     }
-    public function update( $request, User $user)
+    public function update(Request $request, User $user)
     {
+        $request->validate([
+            'token' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'confirmed', Password::defaults()],
+        ]);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
-        return view('backoffice.');
+        return redirect()->route('user.index');
     }
     public function destroy(User $user)
     {

@@ -23,6 +23,7 @@ class ProductController extends Controller
         $products = Product::orderBy('price', 'asc')->get();
         return view('products-list', compact('products'));
     }
+
     public function showProduct($id)
     {
         $product = Product::findOrFail($id);
