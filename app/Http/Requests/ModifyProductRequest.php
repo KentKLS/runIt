@@ -3,22 +3,21 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class AddProductRequest extends FormRequest
+class ModifyProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-
         $usertype = Auth()->user()->usertype;
         if ($usertype == 'admin') {
             return true;
         }
     return false;
     }
+
 
     /**
      * Get the validation rules that apply to the request.
