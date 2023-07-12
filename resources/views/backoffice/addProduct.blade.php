@@ -1,15 +1,25 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Admin Dashboard') }}
-        </h2>
-    </x-slot>
-</x-app-layout>
+@extends('layouts.backofficelayout')
+
+@section('content')
+
+
+
+
 <div class=" bg-slate-800 py-24">
     <div class=" max-w-6xl mx-auto">
         <div class="flex justify-center">Ajouté un Nouveau Produit a la BDD</div>
-        <form method="POST" action="{{ route('addProductStored') }} ">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form method="POST" action="{{ route('product.store') }} ">
             @csrf
+
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom du
                     Produit</label>
@@ -50,9 +60,16 @@
                 <input type="number" id="stock" name="stock"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
+            <div class="mb-6">
+                <label for="category_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Id
+                    categorie</label>
+                <input type="number" id="category_id" name="category_id"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
             <div class="flex justify-center">
                 <button class="  bg-blue-700   rounded  font-bold ">Validé</button>
             </div>
         </form>
     </div>
 </div>
+@endsection
