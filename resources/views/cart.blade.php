@@ -72,9 +72,10 @@
             <div
                 class='col-span-2 flex justify-evenly flex-col items-center outline outline-neutral-400 h-[510px] sticky top-44'>
                 <div class="flex justify-between w-full px-8">
-                    <p> Sous-total</p>
+                    <p > Sous-total</p>
 
-                    <p>{{ array_sum($totalPerProduct) }}</p>
+                    {{-- {{ array_sum($totalPerProduct) }} --}}
+                    <p id="normalTotal"></p>
                 </div>
                 <hr class=" bg-black w-4/5 ">
                 <div class="flex justify-between w-full px-8">
@@ -85,7 +86,8 @@
 
                 <div class="flex font-extrabold justify-between w-full px-8">
                     <p>total TTC</p>
-                    <p>{{ (array_sum($totalPerProduct))+500 }}</p>
+                    {{-- {{ (array_sum($totalPerProduct))+500 }} --}}
+                    <p id="totalTaxed"></p>
                 </div>
                 <hr class=" bg-black w-4/5 ">
 
