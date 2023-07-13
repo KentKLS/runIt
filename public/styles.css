@@ -67,18 +67,6 @@ p.path {
 }
 
 
-button {
-    display: inline-block;
-    background-color: #212121;
-    border-radius: 12px;
-    border: solid var(--color-primary);
-    text-align: center;
-    font-size: var(--font-size);
-    padding: 5px;
-    width: 180px;
-    height: 45px;
-    margin-right: 10px;
-}
 
 .position_button {
     display: flex;
