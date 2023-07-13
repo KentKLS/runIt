@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\ModifyProductRequest;
 use App\Models\Product;
-
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class BackofficeProductController extends Controller
@@ -38,6 +38,7 @@ class BackofficeProductController extends Controller
     }
     public function update(ModifyProductRequest $request,Product $product)
     {
+        try{
         $product->name = $request->name;
         $product->price = $request->price;
         $product->imgURL = $request->image;
@@ -47,6 +48,9 @@ class BackofficeProductController extends Controller
         $product->category_id = $request->category_id;
         $product->save();
         return redirect()->route('product.index')->with('success','Produit modifié avec succès');
+        }catch(QueryException $e){
+            return redirect()->back()->with('error','Bouhou you gonna cry ?');
+        }
     }
     public function destroy(Product $product)
     {

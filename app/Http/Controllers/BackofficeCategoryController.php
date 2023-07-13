@@ -35,6 +35,7 @@ class BackofficeCategoryController extends Controller
         $request->validate([
             'name' => ['string','required']
         ]);
+
         $category->name = $request->name;
         $category->save();
         return redirect()->route('category.index')->with('success',"Catégorie $category->id  modifié avec succès");
