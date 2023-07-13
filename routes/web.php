@@ -26,28 +26,26 @@ use App\Http\Controllers\UserHomeController;
 
 Route::get('/', [HomeController::class, 'show'])->name('showHome');
 Route::get('/cart', [CartController::class, 'show'])->name('showCart');
+Route::delete('/cart',[CartController::class,'destroy'])->name('cart.destroy');
 
 
-Route::get('/catalogue/trail', [ProductController::class, "showProducts"])->name('showProducts');
-Route::get('/catalogue/name', [ProductController::class, "showProductsOrderedByName"]);
-Route::get('/catalogue/price', [ProductController::class, "showOrderedByGrowingPrice"]);
-Route::get('/product/{id}', [ProductController::class, "showProduct"]);
+Route::prefix('/catalogue')->group(function () {
+    Route::get('/trail', [ProductController::class, "showProducts"])->name('showProducts');
+    Route::get('/name', [ProductController::class, "showProductsOrderedByName"]);
+    Route::get('/cat1', [ProductController::class, "showCategoryOne"]);
+    Route::get('/cat2', [ProductController::class, "showCategoryTwo"]);
+    Route::get('/cat3', [ProductController::class, "showCategoryThree"]);
+    Route::get('/price', [ProductController::class, "showOrderedByGrowingPrice"]);
+});
+
+Route::get('/product/{id}', [ProductController::class, "showProduct"])->where('id', '[0-9]+');;
+Route::post('/product/{id}', [CartController::class, "store"])->where('id', '[0-9]+')->name('cart.store');;
 
 
-Route::get('/backoffice/product/add', [BackofficeController::class, "showAddProduct"])->middleware('auth', 'admin')->name('addProduct');
-Route::post('/backoffice/product/stored', [BackofficeController::class, "addProduct"])->middleware('auth', 'admin')->name('addProductStored');
 
-Route::get('/backoffice/data', [BackofficeController::class, "showSeeData"])->middleware('auth', 'admin')->name('showSeeData');
-Route::post('/backoffice/data/get', [BackofficeController::class, "getData"])->middleware('auth', 'admin')->name('getData');
-
-Route::get('/backoffice/product/delete', [BackofficeController::class, "showDeleteProduct"])->middleware('auth', 'admin')->name('deleteProduct');
-Route::delete('/backoffice/product/deleted', [BackofficeController::class, "deleteProduct"])->middleware('auth', 'admin')->name('productDeleted');
-
-Route::get('/backoffice/products', [BackofficeController::class, "showProducts"])->middleware('auth', 'admin')->name('backofficeProducts');
-Route::get('/backoffice/product/modify/{id}', [BackofficeController::class, "showProductToModify"])->middleware('auth', 'admin')->name('productToModify');
-Route::put('/backoffice/product/{id}/modified', [BackofficeController::class, "modifyProduct"])->middleware('auth', 'admin')->name('productModified');
 
 Route::get('/backoffice', [UserHomeController::class, "index"])->middleware('auth')->name('backoffice');
+
 
 
 Route::prefix('/backoffice')->middleware('auth', 'admin')->group(function () {
@@ -91,16 +89,6 @@ Route::prefix('/backoffice')->middleware('auth', 'admin')->group(function () {
         Route::get('/{address}/edit', [BackofficeAddressController::class, "edit"])->name('edit');
         Route::put('/{address}', [BackofficeAddressController::class, "update"])->name('update');
         Route::delete('/{address}', [BackofficeAddressController::class, "destroy"])->name('destroy');
-    });
-
-    Route::prefix('/cart_items')->name('cart_item.')->group(function () {
-        Route::get('/', [BackofficeCartItemsController::class, "index"])->name('index');
-        Route::get('/create', [BackofficeCartItemsController::class, "create"])->name('create');
-        Route::post('/', [BackofficeCartItemsController::class, "store"])->name('store');
-        Route::get('/{cart_item}', [BackofficeCartItemsController::class, "show"])->name('show');
-        Route::get('/{cart_item}/edit', [BackofficeCartItemsController::class, "edit"])->name('edit');
-        Route::put('/{cart_item}', [BackofficeCartItemsController::class, "update"])->name('update');
-        Route::delete('/{cart_item}', [BackofficeCartItemsController::class, "destroy"])->name('destroy');
     });
 });
 
