@@ -3,7 +3,10 @@
 @section('content')
     <div class="bg-slate-800 ">
         <div class="container mx-auto flex justify-center flex-wrap">
-            <a href="{{ route('user.create') }}">Ajouté un nouvel Utilisateur
+            <a href="{{ route('user.create') }}">
+                <div class="text-gray-100 mt-10 p-7 rounded outline outline-1">
+                    Ajouté un nouvel Utilisateur
+                </div>
             </a>
             @foreach ($users as $user)
                 <table class="bg-slate-900 w-full text-gray-100 m-10">
@@ -25,7 +28,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" value="{{ $user->id }}">
-                                    <button href="" class="bg-red-600 rounded py-1 px-3">Delete</button>
+                                    <button onclick="return confirm('Attention ! Pas de retour en arrière possible!')" class="bg-red-600 rounded py-1 px-3">Delete</button>
                                 </form>
 
 

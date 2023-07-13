@@ -31,7 +31,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" value="{{ $address->id }}">
-                                    <button href="" class="bg-red-600 rounded py-1 px-3">Delete</button>
+                                    <button onclick="return confirm('Attention ! Pas de retour en arrière possible!')" class="bg-red-600 rounded py-1 px-3">Delete</button>
                                 </form>
                                 <a href="{{ route('address.edit', ['address' => $address]) }}"
                                     class="bg-green-700 rounded py-1 px-3">Modify</a>

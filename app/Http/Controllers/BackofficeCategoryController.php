@@ -23,7 +23,6 @@ class BackofficeCategoryController extends Controller
         ]);
         $newData = new Category();
         $newData->name = $request->name;
-
         $newData->save();
         return redirect()->route('category.index')->with('success','Nouvel Catégorie ajouté avec succès');
     }

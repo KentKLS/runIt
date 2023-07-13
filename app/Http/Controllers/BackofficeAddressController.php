@@ -25,7 +25,7 @@ class BackofficeAddressController extends Controller
         $newData->addresse_facturation = $request->addresse_facturation;
         $newData->phone_number = $request->phone_number;
         $newData->save();
-        return redirect()->route('Address.index')->with('success','Nouvel Adresse ajouté avec succès');
+        return redirect()->route('address.index')->with('success','Nouvel Adresse ajouté avec succès');
     }
     public function edit(Address $address)
     {
