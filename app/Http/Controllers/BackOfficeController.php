@@ -21,7 +21,7 @@ class BackOfficeController extends Controller
     public function create(Request $request){
         $request->validate([
             'name' => 'required|string',
-            'price' => 'required|integer',
+            'price' => 'required|integer|min:0',
             'imgURL' => 'required|string',
             'oneliner' => 'required|string',
             'description' => 'required|string',
@@ -37,7 +37,7 @@ class BackOfficeController extends Controller
         $product->category_id = $request->category_id;
         $product->save();
 
-        return redirect()->route('home.backoffice');
+        return redirect()->route('createCart');
     }
 
     public function showUpdate(Product $product){
@@ -46,7 +46,7 @@ class BackOfficeController extends Controller
     public function update(Request $request ,Product $product){
         $request->validate([
             'name' => 'required|string',
-            'price' => 'required|integer',
+            'price' => 'required|integer|min:0',
             'imgURL' => 'required|string',
             'oneliner' => 'required|string',
             'description' => 'required|string',

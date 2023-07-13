@@ -9,15 +9,15 @@ class Customer extends Model
 {
     use HasFactory;
 
-    public function customerCartRelation()
+    public function carts()
     {
-        return $this->hasOne(Cart::class);
+        return $this->hasMany(Cart::class);
     }
 
-    public function customerAdressRelation()
-    {
-        return $this->hasMany(Adress::class);
-    }
+//    public function customerAdressRelation()
+//    {
+//        return $this->hasMany(Adress::class);
+//    }
 
 
 

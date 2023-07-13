@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\BackOfficeCategoryController;
+use App\Http\Controllers\BackOfficeCustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::get('/', [HomeController::class, 'show'])->name('showHome');
 
 Route::get('/cart/{id}', [CartController::class, 'show'])->name('showCart');
 //Route::get('/cart/{id}', [CartController::class, 'addcart'])->name('addCart');
+Route::post('/', [CartController::class, 'create'])->name('createCart');
 
 Route::get('/catalogue/trail', [ProductController::class, 'show'])->name('showCatalogueTrail');
 Route::get('/catalogue/trail/chaussures', [ProductController::class, 'chaussures'])->name('showCatalogueTrailChaussures');
@@ -47,3 +49,9 @@ Route::get('/backoffice/category/{category}/edit', [BackOfficeCategoryController
 Route::put('/updateCategory/{category}', [BackOfficeCategoryController::class, 'update'])->name('redirect.update.category');;
 Route::delete('/deleteCategory/{category}', [BackOfficeCategoryController::class, 'destroy'])->name('product.destroy.category');;
 
+Route::get('/backoffice/home-customer', [BackOfficeCustomerController::class, 'index'])->name('home.backoffice.customer');;
+Route::get('/backoffice/customer', [BackOfficeCustomerController::class, 'showCreate'])->name('show.create.customer');;
+Route::post('/addCustomer', [BackOfficeCustomerController::class, 'create'])->name('redirect.create.customer');;
+Route::get('/backoffice/category/{customer}/edit', [BackOfficeCustomerController::class, 'showUpdate'])->name('show.update.customer');;
+Route::put('/updateCategory/{customer}', [BackOfficeCustomerController::class, 'update'])->name('redirect.update.customer');;
+Route::delete('/deleteCategory/{customer}', [BackOfficeCustomerController::class, 'destroy'])->name('product.destroy.customer');;

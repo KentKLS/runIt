@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->integer('number_product');
-            $table->integer('number_article');
+            $table->integer('value_cart');
             $table->timestamps();
+            $table->foreignId('customer_id')->constrained();
+            $table->foreignId('product_id')->constrained();
+
         });
     }
 
@@ -25,5 +28,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('carts');
+
     }
 };

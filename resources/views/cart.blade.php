@@ -63,8 +63,13 @@
                 <p>{{$products->price}}</p>
             </div>
             <hr class=" bg-black w-4/5 ">
-
-            <button class="rounded font-bold w-3/4  p-2 bg-[#D2F306]"> Poursuivre la commande</button>
+            <form action="/" method="post">
+                @csrf
+                <input type="hidden" id="id" name="id" value="{{$products->id}}">
+                <input type="hidden" id="name" name="name" value="{{$products->name}}">
+                <input type="hidden" id="price" name="price" value="{{$products->price}}">
+                <button class="rounded font-bold w-3/4  p-2 bg-[#D2F306]"> Poursuivre la commande</button>
+            </form>
         </div>
     </div>
 @endsection

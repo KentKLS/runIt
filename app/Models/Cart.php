@@ -14,9 +14,9 @@ class Cart extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function cartCustomerRealtion()
+    public function customer()
     {
-        return $this->hasOne(Customer::class);
+        return $this->belongsTo(Customer::class);
     }
 
 }

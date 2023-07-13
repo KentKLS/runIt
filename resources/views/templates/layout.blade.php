@@ -39,6 +39,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/backoffice/category">Ajouter Catégorie</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/backoffice/home-customer">Client</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/backoffice/customer">Ajouter Client</a>
+                </li>
             </ul>
         </div>
     </div>
