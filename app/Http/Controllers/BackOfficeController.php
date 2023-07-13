@@ -19,6 +19,14 @@ class BackOfficeController extends Controller
     }
 
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+            'price' => 'required|integer',
+            'imgURL' => 'required|string',
+            'oneliner' => 'required|string',
+            'description' => 'required|string',
+            'stock' => 'required|integer',
+        ]);
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
@@ -28,6 +36,7 @@ class BackOfficeController extends Controller
         $product->stock = $request->stock;
         $product->category_id = $request->category_id;
         $product->save();
+
         return redirect()->route('home.backoffice');
     }
 
@@ -35,6 +44,14 @@ class BackOfficeController extends Controller
         return view('update-product',['products' => $product]);
     }
     public function update(Request $request ,Product $product){
+        $request->validate([
+            'name' => 'required|string',
+            'price' => 'required|integer',
+            'imgURL' => 'required|string',
+            'oneliner' => 'required|string',
+            'description' => 'required|string',
+            'stock' => 'required|integer',
+        ]);
         $product->name = $request->name;
         $product->price = $request->price;
         $product->imgURL = $request->imgURL;

@@ -8,55 +8,32 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function show()
+    public function show($id)
     {
 //        $product = DB::table('products')->where('id', $id)->first();
-//        $product = Product::select('*')->where('id', $id)->first();
-        return view('cart');
-//        , ['products' => $product]);
+        $product = Product::select('*')->where('id', $id)->first();
+        return view('cart', ['products' => $product]);
     }
 
-    public function addcart($id)
-    {
-        $product=Product::findOrFail($id);
-        $cartSession = session()->get("cartSession",[]);
-
-        $cart[$id] = [
-            'name' => $product->name,
-            'price' => $product->price,
-            'imgURL' => $product->imgURL,
-            'oneliner' => $product->oneliner,
-            'description' => $product->description,
-            'stock' => $product->stock,
-            'category_id' => $product->category_id,
-        ];
-
-        $cartSession[$product->id] = $cart;
-        session()->put("cartSession", $cartSession);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
-
-    }
-
-
-//    function getCart($id) {
-//        $cartSession = $_SESSION['cart'] ?? [];
+//    public function addcart($id)
+//    {
+//        $product=Product::findOrFail($id);
+//        $cartSession = session()->get("cartSession",[]);
 //
-//        $cart = [];
+//        $cart[$id] = [
+//            'name' => $product->name,
+//            'price' => $product->price,
+//            'imgURL' => $product->imgURL,
+//            'oneliner' => $product->oneliner,
+//            'description' => $product->description,
+//            'stock' => $product->stock,
+//            'category_id' => $product->category_id,
+//        ];
 //
-//        foreach($cartSession as $product) {
+//        $cartSession[$product->id] = $cart;
+//        session()->put("cartSession", $cartSession);
+//        return redirect()->back()->with('success', 'Product added to cart successfully!');
 //
-//            $product = DB::table('products')->where('id', $id)->first();
-//
-//            $cart[] = [
-//                'id'        => $product['id'],
-//                'name'      => $product['name'],
-//                'stock'     => $product['stock'],
-//                'price'     => $product['price'],
-//                'imgURL'    => $product['imgURL'],
-//                'total'     => $product['price'],
-//            ];
-//        }
-//
-//        return $cart;
 //    }
+
 }

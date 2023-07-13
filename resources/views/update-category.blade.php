@@ -1,7 +1,14 @@
 @extends('templates.layout')
 @section('content')
-
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{route('redirect.update.category',$categories->id)}}" method="post" class="container -sm">
         @csrf
         @method('put')

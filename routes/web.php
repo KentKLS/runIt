@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'show'])->name('showHome');
 
-Route::get('/cart', [CartController::class, 'show'])->name('showCart');
-Route::get('/cart/{id}', [CartController::class, 'addcart'])->name('addCart');
+Route::get('/cart/{id}', [CartController::class, 'show'])->name('showCart');
+//Route::get('/cart/{id}', [CartController::class, 'addcart'])->name('addCart');
 
 Route::get('/catalogue/trail', [ProductController::class, 'show'])->name('showCatalogueTrail');
 Route::get('/catalogue/trail/chaussures', [ProductController::class, 'chaussures'])->name('showCatalogueTrailChaussures');
@@ -44,6 +44,6 @@ Route::get('/backoffice/home-category', [BackOfficeCategoryController::class, 'i
 Route::get('/backoffice/category', [BackOfficeCategoryController::class, 'showCreate'])->name('show.create.category');;
 Route::post('/addCategory', [BackOfficeCategoryController::class, 'create'])->name('redirect.create.category');;
 Route::get('/backoffice/category/{category}/edit', [BackOfficeCategoryController::class, 'showUpdate'])->name('show.update.category');;
-Route::put('/updateProduct/{category}', [BackOfficeCategoryController::class, 'update'])->name('redirect.update.category');;
-Route::delete('/deleteProduct/{category}', [BackOfficeCategoryController::class, 'destroy'])->name('product.destroy.category');;
+Route::put('/updateCategory/{category}', [BackOfficeCategoryController::class, 'update'])->name('redirect.update.category');;
+Route::delete('/deleteCategory/{category}', [BackOfficeCategoryController::class, 'destroy'])->name('product.destroy.category');;
 

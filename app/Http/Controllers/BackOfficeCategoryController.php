@@ -19,6 +19,9 @@ class BackOfficeCategoryController extends Controller
     }
 
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+        ]);
         $category = new Category();
         $category->name = $request->name;
         $category->save();
@@ -29,6 +32,9 @@ class BackOfficeCategoryController extends Controller
         return view('update-category',['categories' => $category]);
     }
     public function update(Request $request ,Category $category){
+        $request->validate([
+            'name' => 'required|string',
+        ]);
         $category->name = $request->name;
         $category->update();
         return redirect()->route('home.backoffice.category');
