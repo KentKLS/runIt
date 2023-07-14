@@ -17,7 +17,6 @@ function decrementValue(productPrice,id) {
     quantity--;
     quantity = quantity <= 1 ? 1 : quantity;
     document.getElementById(id).value = quantity;
-    document.getElementById(hiddenQuantity).value = quantity;
 
 }
 
@@ -31,8 +30,6 @@ function incrementValue(productPrice, stock, id) {
     quantity++;
     quantity = quantity > stock ? stock : quantity;
     document.getElementById(id).value = quantity;
-    document.getElementById(hiddenQuantity).value = quantity;
-
     var currentTotal = parseFloat(normalTotal.innerHTML);
     var newTotal = currentTotal + productPrice;
     total.innerHTML = newTotal;
