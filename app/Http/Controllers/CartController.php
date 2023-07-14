@@ -17,7 +17,10 @@ class CartController extends Controller
 
     public function show()
     {
+
         $userId = Auth::id();
+
+        $items = [];
         $cartItems = CartItem::where('user_id', $userId)->get();
         foreach ($cartItems as $item) {
             $items[] = $item;
@@ -28,26 +31,47 @@ class CartController extends Controller
 
             return view('cart')->with('cartItems', $items);
         }
+
     }
     public function store(Request $request, Product $id)
     {
+        try {
+            if ($request->user_id === null) {
+                throw new Exception('User ID not available');
+            }
+            $data = $request->except('_token');
+            CartItem::updateOrCreate($data);
+            return redirect()->back()->with('success', 'Produit ajouté au Panier !');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Il faut etre connecté pour pouvoir ajouté cet article a votre panier');
 
-        $data = $request->except('_token');
-        CartItem::updateOrCreate($data);
-        return redirect()->back()->with('success', 'Produit ajouté au Panier !');
+        }
     }
+
     public function destroy(Request $request)
     {
-        try{
-        $item = CartItem::find($request->id);
-        if (!$item) {
-            throw new EntityNotFoundException('cart item', $request->id);
-        }
-        $item->delete();
+        try {
+            $item = CartItem::find($request->id);
+            if (!$item) {
+                throw new EntityNotFoundException('cart item', $request->id);
+            }
+            $item->delete();
 
-        return redirect()->back();
-        }catch(EntityNotFoundException $e){
+            return redirect()->back();
+        } catch (EntityNotFoundException $e) {
             return redirect()->back()->with('error', 'Hmm an unexpected error occured');
         }
+    }
+    public function quantityUpdate(Request $request)
+    {       
+      
+            dd($request->all());
+    
+        
+        // $cartItem = CartItem::find($request->id);
+        // $cartItem->quantity = $request->quantity;
+        // $cartItem->save();
+        // return view('checkout');
+    
     }
 }

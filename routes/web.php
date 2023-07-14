@@ -38,9 +38,10 @@ Route::prefix('/catalogue')->group(function () {
     Route::get('/price', [ProductController::class, "showOrderedByGrowingPrice"]);
 });
 
-Route::get('/product/{id}', [ProductController::class, "showProduct"])->where('id', '[0-9]+');;
-Route::post('/product/{id}', [CartController::class, "store"])->where('id', '[0-9]+')->name('cart.store');;
+Route::get('/product/{id}', [ProductController::class, "showProduct"])->where('id', '[0-9]+');
+Route::post('/product/{id}', [CartController::class, "store"])->where('id', '[0-9]+')->name('cart.store');
 
+Route::post('/checkout', [CartController::class, "quantityUpdate"])->name('cart.quantity.update');
 
 
 

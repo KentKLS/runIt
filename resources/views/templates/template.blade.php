@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <title>Run It @yield('title')</title>
-    <script src="{{URL::asset('script.js') }}">
+    <script src="{{URL::asset('script.js')}}"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
     @include('templates.include.header')

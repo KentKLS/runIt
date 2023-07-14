@@ -10,27 +10,27 @@
                 <div class="columns__column position_button">
                     <div class="p-3 text-[#D2F306]">Triée par</div>
                     <a href="/catalogue/name">
-                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306]">
+                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306] rounded-xl bg-[#212121] mx-2.5 p-1.5 w-[180px] h-[45px] border-2 border-[#D2F306]">
                         Nom
                     </button>
                 </a>
                 <a href="/catalogue/price">
-                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306]">
+                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306] rounded-xl bg-[#212121] mx-2.5 p-1.5 w-[180px] h-[45px] border-2 border-[#D2F306]">
                         Prix Croissant
                     </button>
                 </a>
                     <a href="/catalogue/cat1">
-                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306]">
+                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306] rounded-xl bg-[#212121] mx-2.5 p-1.5 w-[180px] h-[45px] border-2 border-[#D2F306]">
                         Cat 1
                     </button>
                 </a>
                     <a href="/catalogue/cat2">
-                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306]">
+                    <button type="button" class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306] rounded-xl bg-[#212121] mx-2.5 p-1.5 w-[180px] h-[45px] border-2 border-[#D2F306]">
                         Cat 2
                     </button>
                 </a>
                     <a href="/catalogue/cat3">
-                    <button type="button"class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306]">
+                    <button type="button" class="hover:bg-[#D2F306] font-bold hover:text-black text-[#D2F306] rounded-xl bg-[#212121] mx-2.5 p-1.5 w-[180px] h-[45px] border-2 border-[#D2F306]">
                         Cat 3
                     </button>
                 </a>

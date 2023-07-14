@@ -43,7 +43,7 @@ class ProductController extends Controller
         return view('products-list', compact('products'));
     }
     public function showProduct($id)
-    {
+    {   
         $product = Product::findOrFail($id);
         return view('product-detail', ['product' => $product])->with('key', $id);
     }
