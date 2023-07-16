@@ -44,10 +44,10 @@
                         <form id="quantityForm" class="my-form" method="POST" action="{{route('cart.quantity.update')}}">
                             @csrf
                             {{-- @method('PUT') --}}
-                            <input type="hidden" name="cartItems[{{ $loop->index }}][id]" value="{{$cartItem->id}}">
+                            <input type="hidden" name="cart_item_id" value="{{$cartItem->id}}">
                             <input type="button" onclick="decrementValue(<?php echo $cartItem->product->price ?>,<?php echo $id ?>)"
                                 class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="-" />
-                            <input id="{{ $id }}" name="cartItems[{{ $loop->index }}][quantity]" class="w-1/5 text center border-none p-1" type="text"
+                            <input id="{{ $id }}" name="quantity" class="w-1/5 text center border-none p-1" type="text"
                                  readonly min="1" max="{{ $cartItem->product->stock }}"
                                 value="{{ $cartItem->quantity }}">
                             <input type="button" onclick="incrementValue(<?php echo $cartItem->product->price ?>,<?php echo $stock ?>,<?php echo $id ?>)"
