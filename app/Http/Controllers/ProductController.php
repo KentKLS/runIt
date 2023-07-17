@@ -21,8 +21,12 @@ class ProductController extends Controller
     {
         //$product = DB::table('products')->where('id', $id)->first();
         $product = Product::find($id);
-        return view('product-detail',['products' => $product]);
-
+        if (!$product) {
+            return view('404');
+        }
+        else {
+            return view('product-detail', ['products' => $product]);
+        }
     }
 
     public function chaussures(){

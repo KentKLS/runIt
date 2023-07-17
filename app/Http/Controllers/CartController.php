@@ -30,7 +30,7 @@ class CartController extends Controller
     public function customer(){
         $customer=Customer::find(1);
         $cart=$customer->cart;
-        return view('cart');
+        return view('cart', ['cart'=>$cart]);
     }
 
 //    public function addcart($id)
