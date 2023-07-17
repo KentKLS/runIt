@@ -2,11 +2,11 @@
 
 
 
-function decrementValue(productPrice,id) {
+function decrementValue(productPrice,id, totalProduct) {
     var quantity = parseInt(document.getElementById(id).value, 10);
     var total = document.getElementById('normalTotal');
     var totalTaxed = document.getElementById('totalTaxed');
-    var totalPerProduct = document.getElementById('totalPerProduct');    
+    var totalPerProduct = document.getElementById(totalProduct);
     var currentTotal = parseFloat(normalTotal.innerHTML);
     totalPerProduct.innerHTML = productPrice * quantity;
     if (quantity >  1) {
@@ -21,11 +21,11 @@ function decrementValue(productPrice,id) {
 }
 
 
-function incrementValue(productPrice, stock, id) {
+function incrementValue(productPrice, stock, id, totalProduct) {
     var quantity = parseInt(document.getElementById(id).value, 10);
     var total = document.getElementById('normalTotal');
     var totalTaxed = document.getElementById('totalTaxed');
-    var totalPerProduct = document.getElementById('totalPerProduct');
+    var totalPerProduct = document.getElementById(totalProduct);
     quantity = isNaN(quantity) ? 0 : quantity;
     quantity++;
     quantity = quantity > stock ? stock : quantity;
@@ -70,4 +70,3 @@ function formatPrice(price) {
     var formatedPrice = (price / 100).toFixed(2) + "€";
     return formatedPrice;
 }
-

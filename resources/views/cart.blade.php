@@ -45,21 +45,21 @@
                             @csrf
                             {{-- @method('PUT') --}}
                             <input type="hidden" name="cart_item_id" value="{{$cartItem->id}}">
-                            <input type="button" onclick="decrementValue(<?php echo $cartItem->product->price ?>,<?php echo $id ?>)"
+                            <input type="button" onclick="decrementValue(<?php echo $cartItem->product->price ?>,<?php echo $id ?>,'<?php echo  $cartItem->product->name?>')"
                                 class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="-" />
                             <input id="{{ $id }}" name="quantity" class="w-1/5 text center border-none p-1" type="text"
                                  readonly min="1" max="{{ $cartItem->product->stock }}"
                                 value="{{ $cartItem->quantity }}">
-                            <input type="button" onclick="incrementValue(<?php echo $cartItem->product->price ?>,<?php echo $stock ?>,<?php echo $id ?>)"
+                            <input type="button" onclick="incrementValue(<?php echo $cartItem->product->price ?>,<?php echo $stock ?>,<?php echo $id ?>,'<?php echo $cartItem->product->name?>')"
                                 class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="+" />
                         </form>
                     </div>
-                    <div id="totalPerProduct" class="w-1/6 text-center py-3">{{ $cartItem->product->price * $cartItem->quantity }} </div>
+                    <div id="{{$cartItem->product->name}}" class="w-1/6 text-center py-3">{{ $cartItem->product->price * $cartItem->quantity }} </div>
 
                     <div class="w-1/6 py-3 flex justify-center ">
                         <form action="{{ route('cart.destroy', ['item' => $cartItem]) }}" method="post">
                             @csrf
-                            @method('DELETE')                            
+                            @method('DELETE')
                             <input type="hidden" name="id" value="{{ $cartItem->id }}">
                             <button onclick="return confirm('Attention ! Pas de retour en arrière possible!')"
                                 class=""><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
@@ -77,7 +77,7 @@
                 <div class="flex justify-between w-full px-8">
                     <p > Sous-total</p>
 
-                    
+
                     <p id="normalTotal">{{ array_sum($totalPerProduct) }}</p>
                 </div>
                 <hr class=" bg-black w-4/5 ">
@@ -89,7 +89,7 @@
 
                 <div class="flex font-extrabold justify-between w-full px-8">
                     <p>total TTC</p>
-                    
+
                     <p id="totalTaxed">{{ (array_sum($totalPerProduct))+500 }}</p>
                 </div>
                 <hr class=" bg-black w-4/5 ">
