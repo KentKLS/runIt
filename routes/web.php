@@ -57,3 +57,4 @@ Route::put('/updateCategory/{customer}', [BackOfficeCustomerController::class, '
 Route::delete('/deleteCategory/{customer}', [BackOfficeCustomerController::class, 'destroy'])->name('product.destroy.customer');;
 
 
+
