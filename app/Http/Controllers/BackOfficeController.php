@@ -24,7 +24,8 @@ class BackOfficeController extends Controller
             'price' => 'required|integer|min:0',
             'imgURL' => 'required|string',
             'oneliner' => 'required|string',
-            'description' => 'required|string',
+            'description' => 'required|string|min:0',
+            'availability' => 'required|boolean|accepted',
             'stock' => 'required|integer',
         ]);
         $product = new Product();
@@ -34,6 +35,7 @@ class BackOfficeController extends Controller
         $product->oneliner = $request->oneliner;
         $product->description = $request->description;
         $product->stock = $request->stock;
+        $product->availability = $request->availabilility;
         $product->category_id = $request->category_id;
         $product->save();
 
@@ -50,7 +52,7 @@ class BackOfficeController extends Controller
             'imgURL' => 'required|string',
             'oneliner' => 'required|string',
             'description' => 'required|string',
-            'stock' => 'required|integer',
+            'stock' => 'required|integer|min:0',
         ]);
         $product->name = $request->name;
         $product->price = $request->price;
