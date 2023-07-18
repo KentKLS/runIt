@@ -20,14 +20,14 @@ class BackofficeUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'token' => ['required'],
+            'name' => ['required'],
             'email' => ['required', 'email'],
-            'password' => ['required', 'confirmed', Password::defaults()],
+            'password' => ['required',Password::defaults()],
         ]);
         $newData = new User();
         $newData->name = $request->name;
         $newData->email = $request->email;
-        $newData->password = $request->image;
+        $newData->password = $request->password;
         $newData->save();
         return redirect()->route('user.index');
     }

@@ -33,28 +33,35 @@
                 @foreach ($cartItems as $cartItem)
                     <?php $stock = $cartItem->product->stock;
                     $id = $cartItem->id;
-                    $totalPerProduct[] = $cartItem->product->price;
+                    $totalPerProduct[] = $cartItem->product->price * $cartItem->quantity;
                     ?>
                     <hr class=" bg-black w-[90%] m-auto my-3 ">
                     <div class="w-2/6 flex flex-col items-center">{{ $cartItem->product->name }}
                         <img class="w-3/4" src="{{ $cartItem->product->imgURL }}" alt="">
                     </div>
                     <div class="w-1/6 text-center py-3">{{ $cartItem->product->price }}</div>
-                    <div class="w-1/6 text-center py-3">
-                        <form id="quantityForm" class="my-form" method="POST" action="{{route('cart.quantity.update')}}">
+                    <div class="w-1/6 text-center py-3 flex justify-center">
+                        <form id="quantityForm" class="my-form" method="POST" action="{{ route('cart.quantity.update') }}">
                             @csrf
-                            {{-- @method('PUT') --}}
-                            <input type="hidden" name="cart_item_id" value="{{$cartItem->id}}">
-                            <input type="button" onclick="decrementValue(<?php echo $cartItem->product->price ?>,<?php echo $id ?>,'<?php echo  $cartItem->product->name?>')"
+                            @method('PUT')
+                            <input type="hidden" name="cart_item_id" value="{{ $cartItem->id }}">
+                            <input type="hidden" name="minus" value="1">
+                            <input type="submit"
                                 class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="-" />
-                            <input id="{{ $id }}" name="quantity" class="w-1/5 text center border-none p-1" type="text"
-                                 readonly min="1" max="{{ $cartItem->product->stock }}"
-                                value="{{ $cartItem->quantity }}">
-                            <input type="button" onclick="incrementValue(<?php echo $cartItem->product->price ?>,<?php echo $stock ?>,<?php echo $id ?>,'<?php echo $cartItem->product->name?>')"
+                        </form>
+
+                        <div class="w-1/5 text center border-none p-1">{{ $cartItem->quantity }}</div>
+                        <form id="quantityForm" class="my-form" method="POST" action="{{ route('cart.quantity.update') }}">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="cart_item_id" value="{{ $cartItem->id }}">
+                            <input type="hidden" name="minus" value="0">
+                            <input type="submit"
                                 class="px-1  cursor-pointer font-extrabold text-xl text-[#FF7A00]"value="+" />
                         </form>
                     </div>
-                    <div id="{{$cartItem->product->name}}" class="w-1/6 text-center py-3">{{ $cartItem->product->price * $cartItem->quantity }} </div>
+                    <div id="{{ $cartItem->product->name }}" class="w-1/6 text-center py-3">
+                        {{ $cartItem->product->price * $cartItem->quantity }} </div>
 
                     <div class="w-1/6 py-3 flex justify-center ">
                         <form action="{{ route('cart.destroy', ['item' => $cartItem]) }}" method="post">
@@ -75,7 +82,7 @@
             <div
                 class='col-span-2 flex justify-evenly flex-col items-center outline outline-neutral-400 h-[510px] sticky top-44'>
                 <div class="flex justify-between w-full px-8">
-                    <p > Sous-total</p>
+                    <p> Sous-total</p>
 
 
                     <p id="normalTotal">{{ array_sum($totalPerProduct) }}</p>
@@ -90,13 +97,13 @@
                 <div class="flex font-extrabold justify-between w-full px-8">
                     <p>total TTC</p>
 
-                    <p id="totalTaxed">{{ (array_sum($totalPerProduct))+500 }}</p>
+                    <p id="totalTaxed">{{ array_sum($totalPerProduct) + 500 }}</p>
                 </div>
                 <hr class=" bg-black w-4/5 ">
 
-                <button onclick="submitForms()"
-                    class="rounded font-bold w-3/4 flex items-center justify-center  p-2 bg-[#D2F306]"> Poursuivre la
-                    commande</button>
+                <a href="/checkout" class="rounded font-bold w-3/4 flex items-center justify-center  p-2 bg-[#D2F306]">
+                    Poursuivre la
+                    commande</a>
             </div>
         </div>
     @endif

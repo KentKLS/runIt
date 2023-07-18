@@ -27,6 +27,11 @@
             <input name="tableName" id="tableName" type="hidden" value="addresses">
             <button class="bg-slate-900 m-2 px-7 py-3 rounded">Addresses</button>
         </form>
+        <form action="{{ route('order.index') }}" method="GET">
+            @csrf
+            <input name="tableName" id="tableName" type="hidden" value="orders">
+            <button class="bg-slate-900 m-2 px-7 py-3 rounded">Orders</button>
+        </form>
     </div>
 </div>
 @if(session('success'))

@@ -8,7 +8,6 @@ function decrementValue(productPrice,id, totalProduct) {
     var totalTaxed = document.getElementById('totalTaxed');
     var totalPerProduct = document.getElementById(totalProduct);
     var currentTotal = parseFloat(normalTotal.innerHTML);
-    totalPerProduct.innerHTML = productPrice * quantity;
     if (quantity >  1) {
         var newTotal = currentTotal - productPrice;
         total.innerHTML = newTotal;
@@ -17,7 +16,7 @@ function decrementValue(productPrice,id, totalProduct) {
     quantity--;
     quantity = quantity <= 1 ? 1 : quantity;
     document.getElementById(id).value = quantity;
-
+    totalPerProduct.innerHTML = productPrice * quantity;
 }
 
 
@@ -64,6 +63,10 @@ function submitForms() {
     }
 
     console.log(formData);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/checkout", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(formData));
   }
 
 function formatPrice(price) {

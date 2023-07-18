@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CartItemQuantityRequest;
 use Illuminate\Http\Request;
 use App\Models\CartItem;
 use App\Models\Product;
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-
 
     public function show()
     {
@@ -31,7 +31,6 @@ class CartController extends Controller
 
             return view('cart')->with('cartItems', $items);
         }
-
     }
     public function store(Request $request, Product $id)
     {
@@ -44,7 +43,6 @@ class CartController extends Controller
             return redirect()->back()->with('success', 'Produit ajouté au Panier !');
         } catch (Exception $e) {
             return redirect()->back()->with('error', 'Il faut etre connecté pour pouvoir ajouté cet article a votre panier');
-
         }
     }
 
@@ -62,16 +60,23 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Hmm an unexpected error occured');
         }
     }
-    public function quantityUpdate(Request $request)
-    {       
-      
-            dd($request->all());
-    
-        
-        // $cartItem = CartItem::find($request->id);
-        // $cartItem->quantity = $request->quantity;
-        // $cartItem->save();
-        // return view('checkout');
-    
+    public function quantityUpdate(CartItemQuantityRequest $request)
+    {
+        $cartItem = CartItem::find($request->cart_item_id);
+        if ($request->minus > 0) {
+            if ($cartItem->quantity > 1) {
+                $cartItem->quantity -=  1;
+                $cartItem->save();
+                return redirect()->back();
+            }
+        } else {
+            if ($cartItem->quantity < $cartItem->product->stock) {
+                $cartItem->quantity +=  1;
+                $cartItem->save();
+                return redirect()->back();
+            }
+        }
+        return redirect()->back();
+
     }
 }
