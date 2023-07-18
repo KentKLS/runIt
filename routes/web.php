@@ -55,3 +55,5 @@ Route::post('/addCustomer', [BackOfficeCustomerController::class, 'create'])->na
 Route::get('/backoffice/category/{customer}/edit', [BackOfficeCustomerController::class, 'showUpdate'])->name('show.update.customer');;
 Route::put('/updateCategory/{customer}', [BackOfficeCustomerController::class, 'update'])->name('redirect.update.customer');;
 Route::delete('/deleteCategory/{customer}', [BackOfficeCustomerController::class, 'destroy'])->name('product.destroy.customer');;
+
+
