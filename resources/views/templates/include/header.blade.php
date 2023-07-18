@@ -39,7 +39,15 @@
         <nav>
             <div class="flex space-x-6 text-white font-bold mx-6 ">
                 <span><a href="/">| Home</a></span>
+                @auth
+                @if(Auth()->user()->usertype === 'admin')
+                <span><a href="/login">| Admin</a></span>
+                @else
+                <span><a href="/login">| Dashboard</a></span>
+                @endif
+                @else
                 <span><a href="/login">| Login</a></span>
+                @endauth
                 <span><a href="#">| Contact</a></span>
                 <span><a href="/catalogue/trail">| Catalogue</a></span>
                 <a href="/cart">
