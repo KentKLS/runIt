@@ -25,7 +25,7 @@ class BackOfficeController extends Controller
             'imgURL' => 'required|string',
             'oneliner' => 'required|string',
             'description' => 'required|string',
-            'stock' => 'required|integer|0',
+            'stock' => 'required|integer|min:0',
         ]);
         $product = new Product();
         $product->name = $request->name;
