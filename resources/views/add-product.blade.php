@@ -35,6 +35,10 @@
             <label for="formGroupExampleInput2" class="form-label">Stock</label>
             <input type="number" class="form-control" id="formGroupExampleInput2" name="stock" placeholder="Stock">
         </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Catégorie</label>
+            <input type="number" class="form-control" id="formGroupExampleInput2" name="category_id" placeholder="Catégorie">
+        </div>
         <button type="submit" class="btn btn-success">Ajouter</button>
     </form>
 @endsection

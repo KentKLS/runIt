@@ -26,6 +26,7 @@ class BackOfficeController extends Controller
             'oneliner' => 'required|string',
             'description' => 'required|string',
             'stock' => 'required|integer|min:0',
+            'category_id' => 'required|integer'
         ]);
         $product = new Product();
         $product->name = $request->name;
@@ -51,6 +52,7 @@ class BackOfficeController extends Controller
             'oneliner' => 'required|string',
             'description' => 'required|string',
             'stock' => 'required|integer|min:0',
+            'category_id' => 'required|integer'
         ]);
         $product->name = $request->name;
         $product->price = $request->price;
@@ -58,6 +60,7 @@ class BackOfficeController extends Controller
         $product->oneliner = $request->oneliner;
         $product->description = $request->description;
         $product->stock = $request->stock;
+        $product->category_id = $request->category_id;
         $product->update();
         return redirect()->route('home.backoffice');
     }
