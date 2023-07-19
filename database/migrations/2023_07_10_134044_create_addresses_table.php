@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('addresse_livraison');
             $table->string('addresse_facturation');
             $table->string('phone_number');
-            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
