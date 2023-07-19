@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('status')->after('order_has_products_id')->default('pending');
+            $table->string('status')->default('pending');
 
             $table->timestamps();
         });
