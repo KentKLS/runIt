@@ -34,7 +34,7 @@ Route::get('/catalogue/trail/accessoires', [ProductController::class, 'accessoir
 
 Route::get('/product/{id}', [ProductController::class, 'detail'])->name('showProductDetail');
 Route::get('/contact', [ContactController::class, 'show'])->name('showContact');
-
+Route::get('/product/test', [ProductController::class, 'addCart']);
 Route::get('/backoffice/home', [BackOfficeController::class, 'index'])->name('home.backoffice');;
 Route::get('/backoffice/product', [BackOfficeController::class, 'showCreate'])->name('show.create');;
 Route::post('/addProduct', [BackOfficeController::class, 'create'])->name('redirect.create');;

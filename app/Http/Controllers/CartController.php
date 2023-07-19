@@ -33,25 +33,10 @@ class CartController extends Controller
         return view('cart', ['cart'=>$cart]);
     }
 
-//    public function addcart($id)
-//    {
-//        $product=Product::findOrFail($id);
-//        $cartSession = session()->get("cartSession",[]);
-//
-//        $cart[$id] = [
-//            'name' => $product->name,
-//            'price' => $product->price,
-//            'imgURL' => $product->imgURL,
-//            'oneliner' => $product->oneliner,
-//            'description' => $product->description,
-//            'stock' => $product->stock,
-//            'category_id' => $product->category_id,
-//        ];
-//
-//        $cartSession[$product->id] = $cart;
-//        session()->put("cartSession", $cartSession);
-//        return redirect()->back()->with('success', 'Product added to cart successfully!');
-//
-//    }
+    public function addcart($id)
+    {
+
+
+    }
 
 }
