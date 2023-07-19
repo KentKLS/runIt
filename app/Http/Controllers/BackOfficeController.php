@@ -38,7 +38,7 @@ class BackOfficeController extends Controller
         $product->category_id = $request->category_id;
         $product->save();
 
-        return redirect()->route('createCart');
+        return redirect()->route('home.backoffice');
     }
 
     public function showUpdate(Product $product){
